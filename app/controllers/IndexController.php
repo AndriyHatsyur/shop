@@ -13,7 +13,7 @@ class IndexController extends BaseController
     public function testAction()
     {
     	$tovar = new Tovar;
-    	$tovar->name = "tester";
+    	$tovar->name = "testers";
     	$tovar->price = 223.4466;
     	$tovar->save();
     }
