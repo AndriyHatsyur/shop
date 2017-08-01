@@ -4,12 +4,23 @@ class IndexController extends BaseController
 {
     public function indexAction()
     {
-    	echo "string";
+    	echo "home";
+
+    	
+
     }
 
     public function testAction()
     {
-    	echo "string test";
+    	$tovar = new Tovar;
+    	$tovar->name = "tester";
+    	$tovar->price = 223.4466;
+    	$tovar->save();
+    }
+
+    public function route404Action()
+    {
+    	echo "page not found";
     }
    
 }

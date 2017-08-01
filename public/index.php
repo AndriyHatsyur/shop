@@ -4,13 +4,16 @@ use Phalcon\Loader;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\Application;
 use Phalcon\Di\FactoryDefault;
+use Phalcon\Config\Adapter\Ini as ConfigIni;
+
+$config = new ConfigIni('../app/config/config.ini');
 
 $loader = new Loader();
 
 $loader->registerDirs(
     [
-        '../app/controllers/',
-        '../app/models/',
+        $config->phalcon->controllersDir,
+        $config->phalcon->modelsDir,
     ]
 );
 
@@ -18,13 +21,30 @@ $loader->register();
 
 $di = new FactoryDefault();
 
+
+// Database connection is created based on the parameters defined in the configuration file
+$di->set('db', function() use ($config) {
+    return new \Phalcon\Db\Adapter\Pdo\Mysql(
+        [
+            'host' => $config->database->host,
+            'username' => $config->database->username,
+            'password' => $config->database->password,
+            'dbname' => $config->database->dbname,
+            'options'  => [
+                PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'",
+                PDO::ATTR_CASE               => PDO::CASE_LOWER,
+            ]
+        ]
+    );
+});
+
 // Registering the view component
 $di->set(
     'view',
-    function () {
+    function () use ($config) {
         $view = new View();
 
-        $view->setViewsDir('../app/views/');
+        $view->setViewsDir($config->phalcon->viewsDir);
 
         return $view;
     }
@@ -32,8 +52,8 @@ $di->set(
 
 $di->set(
     'router',
-    function () {
-        require __DIR__ . '/../app/config/routes.php';
+    function () use ($config){
+        require __DIR__ . $config->phalcon->routesDir;
 
         return $router;
     }
