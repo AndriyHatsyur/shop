@@ -7,20 +7,35 @@ class IndexController extends BaseController
     	echo "home";
 
     	
-
     }
 
     public function testAction()
     {
-    	$tovar = new Tovar;
-    	$tovar->name = "testers";
-    	$tovar->price = 223.4466;
-    	$tovar->save();
+    	
     }
 
     public function route404Action()
     {
     	echo "page not found";
+    }
+
+    public function installAction()
+    {
+
+    	$install = new InstallDB($this->db);
+
+    	$install->run();
+
+    	$password = "777";  //$this->request->getPost('password');
+
+    	$admin = new Admin();
+
+    	$admin->login = "andriy";  //$this->request->getPost('login');
+
+    	$admin ->password = $this->security->hash($password);
+
+        $admin ->save();
+		
     }
    
 }

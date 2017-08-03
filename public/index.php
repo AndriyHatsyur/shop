@@ -14,6 +14,7 @@ $loader->registerDirs(
     [
         $config->phalcon->controllersDir,
         $config->phalcon->modelsDir,
+        $config->phalcon->pluginsDir,
     ]
 );
 
@@ -53,7 +54,7 @@ $di->set(
 $di->set(
     'router',
     function () use ($config){
-        require __DIR__ . $config->phalcon->routesDir;
+        require $config->phalcon->routesDir;
 
         return $router;
     }

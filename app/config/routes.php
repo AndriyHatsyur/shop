@@ -20,6 +20,14 @@ $router->add(
     ]
 );
 
+$router->add(
+    '/install',
+    [
+        'controller' => 'index',
+        'action'     => 'install',
+    ]
+);
+
 
 $router->notFound(
     [
