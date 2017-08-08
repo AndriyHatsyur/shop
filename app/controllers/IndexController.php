@@ -11,7 +11,7 @@ class IndexController extends BaseController
 
     public function testAction()
     {
-    	
+    	echo "login";
     }
 
     public function route404Action()
