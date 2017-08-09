@@ -9,6 +9,19 @@ class IndexController extends BaseController
         $test = TranslitConverter::toTranslit("Шампунь-гель\" для душу для чоловіків «Заряд свіжості» (500 мл)");
         echo "<br>$test";
 
+        $cat = new Category();
+       
+       $t = Tovar::findFirst();
+
+      echo "<br>$t->title;";
+
+       foreach ($t->tovarCategory as $cat) {
+
+            echo "<br>" . $cat->category->name;
+        } 
+
+
+
     }
 
     public function testAction()

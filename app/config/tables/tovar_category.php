@@ -6,26 +6,26 @@ return
 		    'id',
 		        [
 		            'type'          => Column::TYPE_INTEGER,
-		            'size'          => 2,
+		            'size'          => 10,
 		            'notNull'       => true,
 		            'autoIncrement' => true,
 		            'primary'       => true,
 		        ]
 		),
 		new Column(
-		    'login',
+		    'tovar_id',
 		        [
-		            'type'          => Column::TYPE_VARCHAR,
+		            'type'          => Column::TYPE_INTEGER,
 		            'size'          => 10,
 		            'notNull'       => true,
 		        ]
 		),
 		new Column(
-		    'password',
+		    'category_id',
 		        [
-		            'type'          => Column::TYPE_VARCHAR,
-		            'size'          => 80,
+		            'type'          => Column::TYPE_INTEGER,
+		            'size'          => 4,
 		            'notNull'       => true,
 		        ]
 		),
-	];
+	];	

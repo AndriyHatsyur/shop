@@ -4,28 +4,43 @@ return
 		[
 		    new Column(
 		        'id',
-		            [
-		                'type'          => Column::TYPE_INTEGER,
-		                'size'          => 10,
-		                'notNull'       => true,
-		                'autoIncrement' => true,
-		                'primary'       => true,
-		            ]
+		        [
+		            'type'          => Column::TYPE_INTEGER,
+		            'size'          => 10,
+		            'notNull'       => true,
+		            'autoIncrement' => true,
+		            'primary'       => true,
+		        ]
 		    ),
 		    new Column(
-		        'name',
-		            [
-		                'type'    => Column::TYPE_VARCHAR,
-		                'size'    => 70,
-		                'notNull' => true,
-		            ]
+		        'title',
+		        [
+		            'type'          => Column::TYPE_VARCHAR,
+		            'size'          => 200,
+		            'notNull'       => true,
+		        ]
 		    ),
 		    new Column(
-		        'year',
-		            [
-		                'type'    => Column::TYPE_INTEGER,
-		                'size'    => 11,
-		                'notNull' => true,
-		            ]
+		        'text',
+		        [
+		            'type'         => Column::TYPE_TEXT,
+		            'notNull'      => true,
+		        ]
 		    ),
+		    new Column(
+                'price',
+                [
+                    'type'         => Column::TYPE_DECIMAL,
+                    'size'         => 16,
+                    'notNull'      => true,
+                ]
+            ),
+            new Column(
+                'link',
+                [
+                    'type'         => Column::TYPE_VARCHAR,
+		            'size'         => 200,
+		            'notNull'      => true,
+                ]
+            ),
 		];
