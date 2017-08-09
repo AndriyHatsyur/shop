@@ -9,8 +9,6 @@ class IndexController extends BaseController
         $test = TranslitConverter::toTranslit("Шампунь-гель\" для душу для чоловіків «Заряд свіжості» (500 мл)");
         echo "<br>$test";
 
-        
-    	
     }
 
     public function testAction()
@@ -30,11 +28,11 @@ class IndexController extends BaseController
 
     	$install->run();
 
-    	$password = "777";  //$this->request->getPost('password');
-
+    	$password = "777";  
+        
     	$admin = new Admin();
 
-    	$admin->login = "andriy";  //$this->request->getPost('login');
+    	$admin->login = "andriy"; 
 
     	$admin ->password = $this->security->hash($password);
 
