@@ -6,6 +6,10 @@ class IndexController extends BaseController
     {
     	echo "home";
 
+        $test = TranslitConverter::toTranslit("Шампунь-гель\" для душу для чоловіків «Заряд свіжості» (500 мл)");
+        echo "<br>$test";
+
+        
     	
     }
 
