@@ -4,29 +4,7 @@ class IndexController extends BaseController
 {
     public function indexAction()
     {
-    	echo "home";
-
-        $test = TranslitConverter::toTranslit("Шампунь-гель\" для душу для чоловіків «Заряд свіжості» (500 мл)");
-        echo "<br>$test";
-
-        $cat = new Category();
-       
-       $t = Tovar::findFirst();
-
-      echo "<br>$t->title;";
-
-       foreach ($t->tovarCategory as $cat) {
-
-            echo "<br>" . $cat->category->name;
-        } 
-
-
-
-    }
-
-    public function testAction()
-    {
-    	echo "login";
+    	
     }
 
     public function route404Action()
