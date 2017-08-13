@@ -2,7 +2,7 @@
 
 use Phalcon\Mvc\Model;
 
-class Tovar extends Model
+class Product extends Model
 {
     public $id;
 
@@ -16,7 +16,7 @@ class Tovar extends Model
 
     public function initialize()
     {
-        $this->hasMany("id", "TovarCategory", "tovar_id");
+        $this->hasMany("id", "ProductCategory", "product_id");
     }
 
 }

@@ -13,18 +13,18 @@ $router->add(
 );
 
 $router->add(
-    '/login',
-    [
-        'controller' => 'index',
-        'action'     => 'test',
-    ]
-);
-
-$router->add(
     '/install',
     [
         'controller' => 'index',
         'action'     => 'install',
+    ]
+);
+
+$router->add(
+    '/contact',
+    [
+        'controller' => 'index',
+        'action'     => 'contact',
     ]
 );
 

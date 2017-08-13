@@ -13,7 +13,7 @@ return
 		        ]
 		),
 		new Column(
-		    'tovar_id',
+		    'product_id',
 		        [
 		            'type'          => Column::TYPE_INTEGER,
 		            'size'          => 10,

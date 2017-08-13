@@ -10,7 +10,7 @@ class Category extends Model
 
     public function initialize()
     {
-        $this->hasMany("id", "TovarCategory", "category_id");
+        $this->hasMany("id", "ProductCategory", "category_id");
     }
 
 }

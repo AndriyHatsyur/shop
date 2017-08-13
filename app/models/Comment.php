@@ -8,7 +8,7 @@ class Comment extends Model
 
     public $user_id;
 
-    public $tovar_id;
+    public $product_id;
 
     public $text;
 
