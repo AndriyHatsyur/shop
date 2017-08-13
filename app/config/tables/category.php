@@ -6,25 +6,17 @@ return
 		    'id',
 		        [
 		            'type'          => Column::TYPE_INTEGER,
-		            'size'          => 2,
+		            'size'          => 4,
 		            'notNull'       => true,
 		            'autoIncrement' => true,
 		            'primary'       => true,
 		        ]
 		),
 		new Column(
-		    'login',
+		    'name',
 		        [
 		            'type'          => Column::TYPE_VARCHAR,
-		            'size'          => 10,
-		            'notNull'       => true,
-		        ]
-		),
-		new Column(
-		    'password',
-		        [
-		            'type'          => Column::TYPE_VARCHAR,
-		            'size'          => 80,
+		            'size'          => 50,
 		            'notNull'       => true,
 		        ]
 		),

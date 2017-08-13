@@ -4,16 +4,14 @@ class IndexController extends BaseController
 {
     public function indexAction()
     {
-    	echo "home";
-
-        $test = TranslitConverter::toTranslit("Шампунь-гель\" для душу для чоловіків «Заряд свіжості» (500 мл)");
-        echo "<br>$test";
-
+    	$title = "home";
+        $this->view->setVar('title', $title);
     }
 
-    public function testAction()
+    public function contactAction()
     {
-    	echo "login";
+        $title = "contact";
+        $this->view->setVar('title', $title);
     }
 
     public function route404Action()

@@ -4,6 +4,7 @@ use Phalcon\Loader;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\Application;
 use Phalcon\Di\FactoryDefault;
+use Phalcon\Mvc\View\Engine\Volt;
 use Phalcon\Config\Adapter\Ini as ConfigIni;
 
 $config = new ConfigIni('../app/config/config.ini');
@@ -39,13 +40,37 @@ $di->set('db', function() use ($config) {
     );
 });
 
+// Register Volt as a service
+$di->set(
+    'voltService',
+    function ($view, $di) {
+        $volt = new Volt($view, $di);
+
+        $volt->setOptions(
+            [
+                'compiledPath'      => '../app/compiled-templates/',
+                'compiledExtension' => '.compiled',
+            ]
+        );
+
+        return $volt;
+    }
+);
+
 // Registering the view component
+// Register Volt as template engine
 $di->set(
     'view',
     function () use ($config) {
         $view = new View();
 
         $view->setViewsDir($config->phalcon->viewsDir);
+
+        $view->registerEngines(
+            [
+                '.volt' => 'voltService',
+            ]
+        );    
 
         return $view;
     }
