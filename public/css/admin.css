@@ -1,0 +1,101 @@
+.header {
+	background-color: white;
+	border-bottom: 1px solid #d8d8c0;
+}
+
+.brand, .logout{
+	font-size: 1.3em;
+	line-height: 10vh;
+	text-align: center;
+	display: inline-block;
+	
+}
+
+.logout{
+	font-size: 0.85em;
+	position: absolute;
+    right: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 1px solid #d8d8c0;
+	
+}
+
+.logout:hover {
+	background-color: #ebebe0;
+}
+
+.sidebar{
+	background-color: white;
+	border-right: 1px solid #d8d8c0;
+	height: 90vh;
+	padding-top: 10px;
+}
+
+.content{
+	background-color: white;
+	height: 90vh;
+}
+
+a.nav-link.menu{
+	color: grey;
+	font-size: 1.1em;
+	border-bottom: 1px solid #eee;
+}
+
+a.nav-link.menu:hover{
+	color: black;
+}
+
+.content{
+	padding: 25px;
+	padding-top: 1px;
+}
+
+.icon-edit{
+	position: absolute;
+	right: 60px;
+	color: grey;
+}
+
+.icon-delete{
+	position: absolute;
+	right: 20px;
+	top: 27%;
+	color: grey;
+}
+
+.icon-delete:hover {
+	
+	color: red;
+	cursor: pointer;
+}
+
+.icon-edit:hover{
+	
+	color: green;
+}
+
+.glyphicon-plus, .add-link{
+	color: green;
+}
+
+.add-link:hover, .add-link:active, .add-link:visited{
+	color: green;
+}
+
+li.list-group-item:hover {
+	border-color: #eee;
+
+}
+
+.list-group-item:first-child {
+	border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+
+}
+
+.list-group-item:last-child {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}

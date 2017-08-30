@@ -7,6 +7,7 @@ use Phalcon\Di\FactoryDefault;
 use Phalcon\Mvc\View\Engine\Volt;
 use Phalcon\Config\Adapter\Ini as ConfigIni;
 
+
 $config = new ConfigIni('../app/config/config.ini');
 
 $loader = new Loader();

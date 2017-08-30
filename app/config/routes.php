@@ -28,6 +28,30 @@ $router->add(
     ]
 );
 
+$router->add(
+    '/admin/category',
+    [
+        'controller' => 'admin',
+        'action'     => 'category',
+    ]
+);
+
+$router->add(
+    '/admin/category/remove-{idRemove:[0-9]+}',
+    [
+        'controller' => 'admin',
+        'action'     => 'category',
+    ]
+);
+
+$router->add(
+    '/admin',
+    [
+        'controller' => 'admin',
+        'action'     => 'index',
+    ]
+);
+
 
 $router->notFound(
     [
