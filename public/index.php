@@ -6,6 +6,10 @@ use Phalcon\Mvc\Application;
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Mvc\View\Engine\Volt;
 use Phalcon\Config\Adapter\Ini as ConfigIni;
+use Phalcon\Flash\Direct as FlashDirect;
+use Phalcon\Flash\Session as FlashSession;
+
+
 
 $config = new ConfigIni('../app/config/config.ini');
 

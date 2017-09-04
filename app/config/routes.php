@@ -28,6 +28,38 @@ $router->add(
     ]
 );
 
+$router->add(
+    '/admin/category',
+    [
+        'controller' => 'admin',
+        'action'     => 'category',
+    ]
+);
+
+$router->add(
+    '/admin/category/add',
+    [
+        'controller' => 'admin',
+        'action'     => 'categoryAdd',
+    ]
+);
+
+$router->add(
+    '/admin/category/edit/{id:[0-9]+}',
+    [
+        'controller' => 'admin',
+        'action'     => 'categoryEdit',
+    ]
+);
+
+$router->add(
+    '/admin',
+    [
+        'controller' => 'admin',
+        'action'     => 'index',
+    ]
+);
+
 
 $router->notFound(
     [
