@@ -37,10 +37,18 @@ $router->add(
 );
 
 $router->add(
-    '/admin/category/remove-{idRemove:[0-9]+}',
+    '/admin/category/add',
     [
         'controller' => 'admin',
-        'action'     => 'category',
+        'action'     => 'categoryAdd',
+    ]
+);
+
+$router->add(
+    '/admin/category/edit/{id:[0-9]+}',
+    [
+        'controller' => 'admin',
+        'action'     => 'categoryEdit',
     ]
 );
 

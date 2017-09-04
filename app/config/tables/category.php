@@ -20,4 +20,12 @@ return
 		            'notNull'       => true,
 		        ]
 		),
+		new Column(
+		    'number',
+		        [
+		            'type'          => Column::TYPE_INTEGER,
+		            'size'          => 6,
+		            'notNull'       => true,
+		        ]
+		),
 	];

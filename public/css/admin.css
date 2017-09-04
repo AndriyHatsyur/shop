@@ -35,21 +35,19 @@
 .content{
 	background-color: white;
 	height: 90vh;
+	padding: 25px;
+	padding-top: 10px;
 }
 
 a.nav-link.menu{
 	color: grey;
-	font-size: 1.1em;
+	font-size: 1em;
 	border-bottom: 1px solid #eee;
 }
 
 a.nav-link.menu:hover{
 	color: black;
-}
-
-.content{
-	padding: 25px;
-	padding-top: 1px;
+	background-color: #eee;
 }
 
 .icon-edit{
@@ -61,7 +59,7 @@ a.nav-link.menu:hover{
 .icon-delete{
 	position: absolute;
 	right: 20px;
-	top: 27%;
+	top: 32%;
 	color: grey;
 }
 
@@ -99,3 +97,16 @@ li.list-group-item:hover {
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
 }
+
+.btn-radius, .form-control {
+    border-radius: 0;
+}
+
+.form-control, .alert {
+    width: 80%;
+}
+
+.alert {
+    margin-top: 10px;
+}
+
