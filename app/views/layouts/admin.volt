@@ -13,7 +13,7 @@
 				    <a class="nav-link menu" href="/admin/category">Категорії</a>
 				</li>
 				<li class="nav-item">
-				    <a class="nav-link menu" href="/admin/tovar">Товар</a>
+				    <a class="nav-link menu" href="/admin/product">Товари</a>
 				</li>
 			</ul>
 		</div>

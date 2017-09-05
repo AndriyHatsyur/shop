@@ -53,6 +53,23 @@ $router->add(
 );
 
 $router->add(
+    '/admin/product',
+    [
+        'controller' => 'admin',
+        'action'     => 'product',
+    ]
+);
+
+
+$router->add(
+    '/admin/product/add',
+    [
+        'controller' => 'admin',
+        'action'     => 'productAdd',
+    ]
+);
+
+$router->add(
     '/admin',
     [
         'controller' => 'admin',

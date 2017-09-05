@@ -22,21 +22,22 @@
 }
 
 .logout:hover {
-	background-color: #ebebe0;
+	background-color: #eee;
 }
 
 .sidebar{
 	background-color: white;
 	border-right: 1px solid #d8d8c0;
-	height: 90vh;
+	min-height: 90vh;
 	padding-top: 10px;
 }
 
 .content{
 	background-color: white;
-	height: 90vh;
+	min-height: 90vh;
 	padding: 25px;
 	padding-top: 10px;
+	padding-bottom: 150px;
 }
 
 a.nav-link.menu{
@@ -98,7 +99,7 @@ li.list-group-item:hover {
     border-bottom-left-radius: 0px;
 }
 
-.btn-radius, .form-control {
+.btn-radius, .form-control, .modal-content {
     border-radius: 0;
 }
 

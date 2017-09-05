@@ -44,9 +44,7 @@ class AdminController extends BaseController
         if ($this->request->isPost())
         {
           
-            $category = new Category;
-            $category->name = $this->request->getPost('name');
-            $category->number = $this->request->getPost('number');
+            $category = new Category($_POST);
             $category->save();
             $alert = 'Категорію додано';
             $this->view->setVar('alert', $alert);
@@ -73,6 +71,23 @@ class AdminController extends BaseController
             $alert = 'Категорію редаговано';
             $this->view->setVar('alert', $alert);
         }
+    }
+
+    public function productAction()
+    {
+        $title = "Товари";
+        $this->view->setVar('title', $title);
+
+        $products = Product::find();
+
+        $this->view->setVar('products', $products);
+    }
+
+    public function productAddAction()
+    {
+        $title = "Додати товар";
+        $this->view->setVar('title', $title);
+
     }
    
 }

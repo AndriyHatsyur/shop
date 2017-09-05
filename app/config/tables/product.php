@@ -21,7 +21,7 @@ return
 		        ]
 		    ),
 		    new Column(
-		        'text',
+		        'description',
 		        [
 		            'type'         => Column::TYPE_TEXT,
 		            'notNull'      => true,
@@ -35,8 +35,24 @@ return
                     'notNull'      => true,
                 ]
             ),
+		    new Column(
+                'sale',
+                [
+                    'type'         => Column::TYPE_DECIMAL,
+                    'size'         => 16,
+                    'notNull'      => true,
+                ]
+            ),
             new Column(
                 'link',
+                [
+                    'type'         => Column::TYPE_VARCHAR,
+		            'size'         => 200,
+		            'notNull'      => true,
+                ]
+            ),
+            new Column(
+                'image',
                 [
                     'type'         => Column::TYPE_VARCHAR,
 		            'size'         => 200,

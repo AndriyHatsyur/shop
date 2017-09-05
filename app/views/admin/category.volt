@@ -14,6 +14,7 @@
 </ul>
 <script type="text/javascript">
 function remov(id){
+
 	$.ajax({
 		url: '/admin/category',
 		type: "POST",
@@ -25,6 +26,7 @@ function remov(id){
 	});
 }	
 </script>
+
 
 
 
