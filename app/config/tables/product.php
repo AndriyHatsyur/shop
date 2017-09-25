@@ -31,7 +31,8 @@ return
                 'price',
                 [
                     'type'         => Column::TYPE_DECIMAL,
-                    'size'         => 16,
+                    'size'         => 4,
+                    'scale'        => 2,
                     'notNull'      => true,
                 ]
             ),
@@ -39,7 +40,8 @@ return
                 'sale',
                 [
                     'type'         => Column::TYPE_DECIMAL,
-                    'size'         => 16,
+                    'size'         => 4,
+                    'scale'        => 2,
                     'notNull'      => true,
                 ]
             ),

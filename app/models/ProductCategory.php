@@ -2,7 +2,7 @@
 
 use Phalcon\Mvc\Model;
 
-class ProductrCategory extends Model
+class ProductCategory extends Model
 {
     public $id;
 

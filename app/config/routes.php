@@ -31,32 +31,32 @@ $router->add(
 $router->add(
     '/admin/category',
     [
-        'controller' => 'admin',
-        'action'     => 'category',
+        'controller' => 'admin_Category',
+        'action'     => 'index',
     ]
 );
 
 $router->add(
     '/admin/category/add',
     [
-        'controller' => 'admin',
-        'action'     => 'categoryAdd',
+        'controller' => 'admin_Category',
+        'action'     => 'add',
     ]
 );
 
 $router->add(
     '/admin/category/edit/{id:[0-9]+}',
     [
-        'controller' => 'admin',
-        'action'     => 'categoryEdit',
+        'controller' => 'admin_Category',
+        'action'     => 'edit',
     ]
 );
 
 $router->add(
     '/admin/product',
     [
-        'controller' => 'admin',
-        'action'     => 'product',
+        'controller' => 'admin_Product',
+        'action'     => 'index',
     ]
 );
 
@@ -64,8 +64,8 @@ $router->add(
 $router->add(
     '/admin/product/add',
     [
-        'controller' => 'admin',
-        'action'     => 'productAdd',
+        'controller' => 'admin_Product',
+        'action'     => 'add',
     ]
 );
 

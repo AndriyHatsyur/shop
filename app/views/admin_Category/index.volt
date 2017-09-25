@@ -22,9 +22,11 @@ function remov(id){
 		cache: false,
 		success: function (html){
 			$('.wrapper').html(html);
+			$('#exampleModal').modal('show');
 		}
 	});
 }	
+
 </script>
 
 

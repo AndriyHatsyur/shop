@@ -12,15 +12,26 @@
   </div>
   <div class="form-group">
     <label>Ціна</label>
-    <input type="number" name="price" class="form-control btn-radius" required>
+    <input type="text" name="price" class="form-control btn-radius" required>
   </div>
   <div class="form-group">
     <label>Знижка</label>
-    <input type="number" name="sale" class="form-control btn-radius" required>
+    <input type="text" name="sale" class="form-control btn-radius" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleSelect1">Категорія</label>
+    {% for category in categories %}
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" name="categories[]" value="{{category.id}}">
+        {{category.name}}
+      </label>
+    </div>
+    {% endfor %}
   </div>
   <div class="form-group">
     <label>Зображення</label>
-    <input type="file" name="image" class="form-control-file btn-radius" required>
+    <input type="file" name="files" class="form-control-file btn-radius" required>
     <small class="form-text text-muted">Виберіть зображення товару</small>
   </div>
   <input type='submit' class="btn btn-success btn-radius" value="Додати">
