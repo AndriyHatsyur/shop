@@ -54,16 +54,15 @@ class AdminProductController extends BaseController
             $files = $this->request->getUploadedFiles();
  
             if ($this->request->hasFiles() == true) {
-                $dir =  $_SERVER['DOCUMENT_ROOT'] . 'public/img/product/' ;
 
                 foreach ($this->request->getUploadedFiles() as $file) {
-                    $product->image = $dir . $file->getName();
+                    $product->image = '/public/img/product/' . $file->getName();
                     
                 }
 
                 if ($product->save()) {
 
-                    $file->moveTo($product->image);
+                    $file->moveTo($_SERVER['DOCUMENT_ROOT'] . $product->image);
 
                     $categories = $this->request->getPost('categories');
 
@@ -86,6 +85,21 @@ class AdminProductController extends BaseController
         }     
             
         $this->view->setVar('alert', $alert);
+    }
+
+    public function editAction()
+    {
+        $this->view->setVar('title', "Редагувати товар");
+
+        $id = $this->dispatcher->getParam('id');
+
+        $product = Product::findFirst($id);
+
+        $this->view->setVar('product', $product);
+
+        $categories = Category::find();
+
+        $this->view->setVar('categories', $categories);
     }
 
    

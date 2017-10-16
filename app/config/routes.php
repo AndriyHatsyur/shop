@@ -70,6 +70,14 @@ $router->add(
 );
 
 $router->add(
+    '/admin/product/edit/{id:[0-9]+}',
+    [
+        'controller' => 'admin_Product',
+        'action'     => 'edit',
+    ]
+);
+
+$router->add(
     '/admin',
     [
         'controller' => 'admin',

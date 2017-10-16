@@ -113,3 +113,6 @@ li.list-group-item:hover {
     margin-top: 10px;
 }
 
+.form-image {
+	max-width: 100px;
+}
