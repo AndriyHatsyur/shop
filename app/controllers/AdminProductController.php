@@ -18,6 +18,7 @@ class AdminProductController extends BaseController
         if ($this->request->isAjax()) {
             $id= $this->request->getPost('id');
             $product = Product::findFirst($id);
+            Images::delete($product->image);
             $product->delete();
 
             foreach ($product->productCategory as $productCategory) {
@@ -33,7 +34,7 @@ class AdminProductController extends BaseController
 
         $this->view->setVar('products', $products);
     }
-
+    
     public function addAction()
     {
         
@@ -50,20 +51,16 @@ class AdminProductController extends BaseController
             $product->price = $this->request->getPost('price');
             $product->sale = $this->request->getPost('sale');
             $product->link = TranslitConverter::toTranslit($product->title);
-
-            $files = $this->request->getUploadedFiles();
  
-            if ($this->request->hasFiles() == true) {
+            if ($this->request->hasFiles()) {
+                $files = $this->request->getUploadedFiles();
 
-                foreach ($this->request->getUploadedFiles() as $file) {
-                    $product->image = '/public/img/product/' . $file->getName();
-                    
-                }
+                $img = new Images($files[0]);
+                $img->save();
+                $product->image = $img->getLink();
 
                 if ($product->save()) {
-
-                    $file->moveTo($_SERVER['DOCUMENT_ROOT'] . $product->image);
-
+ 
                     $categories = $this->request->getPost('categories');
 
                     foreach ($categories as $category) {
@@ -87,20 +84,66 @@ class AdminProductController extends BaseController
         $this->view->setVar('alert', $alert);
     }
 
+
     public function editAction()
     {
         $this->view->setVar('title', "Редагувати товар");
 
         $id = $this->dispatcher->getParam('id');
 
+        if ($this->request->isPost()) {
+            $product = Product::findFirst($id);
+            $product->title = $this->request->getPost('name');
+            $product->description = $this->request->getPost('description');
+            $product->price = $this->request->getPost('price');
+            $product->sale = $this->request->getPost('sale');
+            $product->link = TranslitConverter::toTranslit($product->title);
+ 
+            if ($this->request->hasFiles() == true) {
+                
+                
+                $files = $this->request->getUploadedFiles();
+
+                if ($files[0]->getSize() > 0) {
+                    Images::delete($product->image);
+                    $img = new Images($files[0]);
+                    $img->save();
+                    $product->image = $img->getLink();
+                }
+
+            }
+
+            if ($product->save()) {
+
+                foreach ($product->productCategory as $productCategory) {
+                        
+                    $productCategory->delete();
+                }
+ 
+                $categories = $this->request->getPost('categories');
+
+                foreach ($categories as $category) {
+
+                    $productCategory = new ProductCategory();
+                    $productCategory->product_id = $product->id;
+                    $productCategory->category_id = $category;
+                    $productCategory->save();
+                }
+                    
+                $alert = 'Твар додано';
+
+            } else {
+
+                $alert = 'При дованні товару виникла помилка';
+            }
+                 
+        } 
+
         $product = Product::findFirst($id);
-
-        $this->view->setVar('product', $product);
-
         $categories = Category::find();
-
+        $this->view->setVar('alert', $alert);
+        $this->view->setVar('product', $product);
         $this->view->setVar('categories', $categories);
     }
 
-   
 }

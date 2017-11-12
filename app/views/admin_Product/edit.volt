@@ -21,16 +21,17 @@
   <div class="form-group">
     <label for="exampleSelect1">Категорія</label>
     {% for category in categories %}
+      {% set result = "" %}
     <div class="form-check">
       <label class="form-check-label">
         {% for productCategory in product.productCategory %}
           {% if  category.id == productCategory.category.id %}
-            <input type="checkbox" class="form-check-input" name="categories[]" value="{{category.id}}" checked>
-          {% else %}
-            <input type="checkbox" class="form-check-input" name="categories[]" value="{{category.id}}">
-          {% endif %}  
+          {% set result = 'checked' %}
+            {% break %}     
+          {% endif %}
         {% endfor %}
-        {{category.name}}
+        <input type="checkbox" class="form-check-input" name="categories[]" value="{{category.id}}" {{result}} >
+        {{category.name}} 
       </label>
     </div>
     {% endfor %}
