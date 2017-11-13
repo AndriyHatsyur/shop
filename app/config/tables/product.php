@@ -60,5 +60,14 @@ return
 		            'size'         => 200,
 		            'notNull'      => true,
                 ]
-            ),
+			),
+			
+			new Column(
+		        'stock',
+		        [
+		            'type'          => Column::TYPE_INTEGER,
+		            'size'          => 3,
+		            'notNull'       => true,
+		        ]
+		    ),
 		];

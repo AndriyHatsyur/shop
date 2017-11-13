@@ -45,6 +45,14 @@ $router->add(
 );
 
 $router->add(
+    '/admin/category/delete',
+    [
+        'controller' => 'admin_Category',
+        'action'     => 'delete',
+    ]
+);
+
+$router->add(
     '/admin/category/edit/{id:[0-9]+}',
     [
         'controller' => 'admin_Category',
@@ -66,6 +74,14 @@ $router->add(
     [
         'controller' => 'admin_Product',
         'action'     => 'add',
+    ]
+);
+
+$router->add(
+    '/admin/product/delete',
+    [
+        'controller' => 'admin_Product',
+        'action'     => 'delete',
     ]
 );
 

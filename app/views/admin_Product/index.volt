@@ -17,7 +17,7 @@
 function remov(id){
 
 	$.ajax({
-		url: '/admin/product',
+		url: '/admin/product/delete',
 		type: "POST",
 		data: "id="+id,
 		cache: false,

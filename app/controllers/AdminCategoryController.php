@@ -15,13 +15,7 @@ class AdminCategoryController extends BaseController
     {
         $this->view->setVar('title', "Категорії");
 
-        if ($this->request->isAjax()) {
-            $id= $this->request->getPost('id');
-            $category = Category::findFirst($id);
-            $category->delete();
-            $alert = 'Категорію видалено';
-            $this->view->setVar('alert', $alert);
-        }
+        
 
         $categories = Category::find();
 
@@ -75,6 +69,21 @@ class AdminCategoryController extends BaseController
             
             $this->view->setVar('alert', $alert);
         }
+    }
+
+    public function deleteAction()
+    {
+        if ($this->request->isAjax()) {
+            $id= $this->request->getPost('id');
+            $category = Category::findFirst($id);
+            $category->delete();
+            $alert = 'Категорію видалено';
+            $this->view->setVar('alert', $alert);
+        }
+
+        return $this->dispatcher->forward([
+            'action' => 'index'
+        ]);
     }
 
     

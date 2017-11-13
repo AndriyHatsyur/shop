@@ -19,6 +19,10 @@
     <input type="text" name="sale" class="form-control btn-radius" required>
   </div>
   <div class="form-group">
+    <label>На складі</label>
+    <input type="text" name="stock" class="form-control btn-radius" required>
+  </div>
+  <div class="form-group">
     <label for="exampleSelect1">Категорія</label>
     {% for category in categories %}
     <div class="form-check">
@@ -36,3 +40,8 @@
   </div>
   <input type='submit' class="btn btn-success btn-radius" value="Додати">
 </form>
+<script type="text/javascript">
+  $( document ).ready(function() {
+      $('#exampleModal').modal('show');
+    });
+</script>

@@ -12,3 +12,9 @@
   </div>
   <input type='submit' class="btn btn-success btn-radius" value="Додати">
 </form>
+<script type="text/javascript">
+  $( document ).ready(function() {
+      $('#exampleModal').modal('show');
+    });
+</script>
+

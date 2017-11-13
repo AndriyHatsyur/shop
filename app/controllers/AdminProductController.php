@@ -15,21 +15,6 @@ class AdminProductController extends BaseController
     {
         $this->view->setVar('title', "Товари");
 
-        if ($this->request->isAjax()) {
-            $id= $this->request->getPost('id');
-            $product = Product::findFirst($id);
-            Images::delete($product->image);
-            $product->delete();
-
-            foreach ($product->productCategory as $productCategory) {
-                
-                $productCategory->delete();
-            }
-
-            $alert = 'Товар видалено';
-            $this->view->setVar('alert', $alert);
-        }
-
         $products = Product::find();
 
         $this->view->setVar('products', $products);
@@ -50,6 +35,7 @@ class AdminProductController extends BaseController
             $product->description = $this->request->getPost('description');
             $product->price = $this->request->getPost('price');
             $product->sale = $this->request->getPost('sale');
+            $product->stock = $this->request->getPost('stock');
             $product->link = TranslitConverter::toTranslit($product->title);
  
             if ($this->request->hasFiles()) {
@@ -97,6 +83,7 @@ class AdminProductController extends BaseController
             $product->description = $this->request->getPost('description');
             $product->price = $this->request->getPost('price');
             $product->sale = $this->request->getPost('sale');
+            $product->stock = $this->request->getPost('stock');
             $product->link = TranslitConverter::toTranslit($product->title);
  
             if ($this->request->hasFiles() == true) {
@@ -130,11 +117,11 @@ class AdminProductController extends BaseController
                     $productCategory->save();
                 }
                     
-                $alert = 'Твар додано';
+                $alert = 'Твар редаговано';
 
             } else {
 
-                $alert = 'При дованні товару виникла помилка';
+                $alert = 'При редагуванні товару виникла помилка';
             }
                  
         } 
@@ -146,4 +133,26 @@ class AdminProductController extends BaseController
         $this->view->setVar('categories', $categories);
     }
 
+
+    public function deleteAction()
+    {
+        if ($this->request->isAjax()) {
+            $id= $this->request->getPost('id');
+            $product = Product::findFirst($id);
+            Images::delete($product->image);
+            $product->delete();
+
+            foreach ($product->productCategory as $productCategory) {
+                
+                $productCategory->delete();
+            }
+
+            $alert = 'Товар видалено';
+            $this->view->setVar('alert', $alert);
+        }
+
+        return $this->dispatcher->forward([
+            'action' => 'index'
+        ]);
+    }
 }
