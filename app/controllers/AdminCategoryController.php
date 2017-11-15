@@ -76,6 +76,9 @@ class AdminCategoryController extends BaseController
         if ($this->request->isAjax()) {
             $id= $this->request->getPost('id');
             $category = Category::findFirst($id);
+            foreach($category->productCategory as $prCat) {
+                $prCat->delete();
+            }
             $category->delete();
             $alert = 'Категорію видалено';
             $this->view->setVar('alert', $alert);

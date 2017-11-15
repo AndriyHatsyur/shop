@@ -3,7 +3,7 @@
 <a href="/admin/category/add" class="add-link"> Додати <span class="fa fa-plus"></span> </a>
 <br>
 <br>
-<table class="category-list">
+<table class="admin-list">
     <thead>
         <tr>
             <th>Назва</th> <th>Порядковий №</th> <th></th>
@@ -13,7 +13,7 @@
 		{% for category in categories %}
         <tr>
 			<td>{{category.name}}</td> <td>{{category.number}}</td>
-			<td>
+			<td class="text-center">
 				<a href="/admin/category/edit/{{category.id}}" class="icon-edit">
 					<span class="fa fa-pencil-square-o"></span>
 				</a>

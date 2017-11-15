@@ -1,5 +1,5 @@
 {% include 'partials/alert.volt' %}
-<h2>Додати категорію </h2>
+<h2>Редагувати категорію </h2>
 <br>
 <form method="POST">
   <div class="form-group">

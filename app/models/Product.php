@@ -18,6 +18,8 @@ class Product extends Model
 
     public $image;
 
+    public $stock;
+
     public function initialize()
     {
         $this->hasMany("id", "ProductCategory", "product_id");

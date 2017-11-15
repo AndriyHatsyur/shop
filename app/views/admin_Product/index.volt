@@ -3,16 +3,26 @@
 <a href="/admin/product/add" class="add-link"> Додати <span class="fa fa-plus"></span> </a>
 <br>
 <br>
-<ul class="list-group">
-	{% for product in products %}
-	<li class="list-group-item"> {{product.title}}  
-		<a href="/admin/product/edit/{{product.id}}" class="icon-edit"><span class="fa fa-pencil-square-o"></span></a>
-	
-		<span class="fa fa-times icon-delete" onclick="remov({{product.id}})"></span>
-	</li>
-	{% endfor %}
-</ul>
-
+<table class="admin-list">
+    <thead>
+        <tr>
+            <th>Назва</th> <th>Ціна</th> <th>На складі</th> <th></th>
+        </tr>
+    </thead>
+    <tbody>
+		{% for product in products %}
+        <tr>
+			<td class="name-w" >{{product.title}}</td> <td>{{product.price}} Грн.</td> <td>{{product.stock}} шт.</td>
+			<td>
+				<a href="/admin/product/edit/{{product.id}}" class="icon-edit">
+					<span class="fa fa-pencil-square-o"></span>
+				</a>
+				<span class="fa fa-times icon-delete" onclick="remov({{product.id}})"></span>
+			</td>
+		</tr>
+		{% endfor %}
+    <tbody>
+</table>
 <script type="text/javascript">
 function remov(id){
 

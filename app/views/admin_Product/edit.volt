@@ -1,5 +1,5 @@
 {% include 'partials/alert.volt' %}
-<h2>Додати товар </h2>
+<h2>Редагувати товар </h2>
 <br>
 <form method="POST" enctype='multipart/form-data'>
   <div class="form-group">
