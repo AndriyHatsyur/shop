@@ -8,7 +8,7 @@
   </div>
   <div class="form-group">
     <label>Опис</label>
-    <textarea class="form-control btn-radius" name="description" rows="3"></textarea>
+    <textarea class="form-control btn-radius" name="description" rows="12"></textarea>
   </div>
   <div class="form-group">
     <label>Ціна</label>

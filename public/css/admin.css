@@ -157,3 +157,12 @@ a.nav-link.menu:hover{
 	color: red;
 	font-weight: lighter;
 }
+
+.nav-tabs .nav-link{
+	border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.nav-item a{
+	color: grey;
+}
