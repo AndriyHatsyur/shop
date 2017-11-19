@@ -100,7 +100,6 @@ a.nav-link.menu:hover{
 }
 
 .admin-list {
-	border: 1px solid grey;
 	width: 100%;
 }
 
@@ -165,4 +164,13 @@ a.nav-link.menu:hover{
 
 .nav-item a{
 	color: grey;
+}
+
+.nav-tabs .nav-link.active{
+	background-color: rgb(240, 243, 241);
+	border-color: rgba(0,0,0,.125);
+}
+
+.nav-tabs {
+    border-bottom: 0;
 }
