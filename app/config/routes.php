@@ -94,6 +94,22 @@ $router->add(
 );
 
 $router->add(
+    '/admin/login',
+    [
+        'controller' => 'session',
+        'action'     => 'login',
+    ]
+);
+
+$router->add(
+    '/admin/logout',
+    [
+        'controller' => 'session',
+        'action'     => 'logout',
+    ]
+);
+
+$router->add(
     '/admin',
     [
         'controller' => 'admin',

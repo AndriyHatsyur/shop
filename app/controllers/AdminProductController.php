@@ -1,15 +1,7 @@
 <?php
 
-class AdminProductController extends BaseController
+class AdminProductController extends AdminBaseController
 {
-
-    public function initialize()
-    {
-        
-        $this->assets->addCss('css/admin.css');
-        $this->view->setTemplateAfter('admin');
-    }
-
 
     public function indexAction()
     {
@@ -78,7 +70,7 @@ class AdminProductController extends BaseController
         $id = $this->dispatcher->getParam('id');
 
         if ($this->request->isPost()) {
-            $product = Product::findFirst($id);
+            $product = Product::findFirstById($id);
             $product->title = $this->request->getPost('name');
             $product->description = $this->request->getPost('description');
             $product->price = $this->request->getPost('price');
@@ -126,7 +118,7 @@ class AdminProductController extends BaseController
                  
         } 
 
-        $product = Product::findFirst($id);
+        $product = Product::findFirstById($id);
         $categories = Category::find();
         $this->view->setVar('alert', $alert);
         $this->view->setVar('product', $product);
@@ -138,7 +130,7 @@ class AdminProductController extends BaseController
     {
         if ($this->request->isAjax()) {
             $id= $this->request->getPost('id');
-            $product = Product::findFirst($id);
+            $product = Product::findFirstById($id);
             Images::delete($product->image);
             $product->delete();
 

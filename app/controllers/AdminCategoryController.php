@@ -1,21 +1,12 @@
 <?php
 
-class AdminCategoryController extends BaseController
+class AdminCategoryController extends AdminBaseController
 {
-
-    public function initialize()
-    {
-        
-        $this->assets->addCss('css/admin.css');
-        $this->view->setTemplateAfter('admin');
-    }
-
 
     public function indexAction()
     {
-        $this->view->setVar('title', "Категорії");
 
-        
+        $this->view->setVar('title', "Категорії");
 
         $categories = Category::find();
 
@@ -40,6 +31,7 @@ class AdminCategoryController extends BaseController
             
             $this->view->setVar('alert', $alert);
         }
+
     }
 
 
@@ -50,7 +42,7 @@ class AdminCategoryController extends BaseController
 
         $id = $this->dispatcher->getParam('id');
 
-        $category = Category::findFirst($id);
+        $category = Category::findFirstById($id);
 
         $this->view->setVar('category', $category);
 
@@ -75,7 +67,7 @@ class AdminCategoryController extends BaseController
     {
         if ($this->request->isAjax()) {
             $id= $this->request->getPost('id');
-            $category = Category::findFirst($id);
+            $category = Category::findFirstById($id);
             foreach($category->productCategory as $prCat) {
                 $prCat->delete();
             }

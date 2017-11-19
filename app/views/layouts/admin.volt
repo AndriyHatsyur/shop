@@ -1,6 +1,6 @@
 <header class="container-fluid header">
 		<div class="brand"> ADMIN PANEL</div>
-		<div class="logout">LOGOUT</div>
+		<div class="logout"><a href="/admin/logout">LOGOUT</a></div>
 </header>
 <div class="container-fluid">
 	 <div class="row">
