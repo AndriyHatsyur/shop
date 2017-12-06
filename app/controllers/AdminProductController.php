@@ -1,5 +1,7 @@
 <?php
 
+use Phalcon\Paginator\Adapter\Model as PaginatorModel;
+
 class AdminProductController extends AdminBaseController
 {
 
@@ -7,9 +9,21 @@ class AdminProductController extends AdminBaseController
     {
         $this->view->setVar('title', "Товари");
 
+        $currentPage = (int) $_GET['page'];
+        
         $products = Product::find();
 
-        $this->view->setVar('products', $products);
+        $paginator = new PaginatorModel(
+            [
+                'data'  => $products,
+                'limit' => 10,
+                'page'  => $currentPage,
+            ]
+        );
+        
+        $page = $paginator->getPaginate();
+
+        $this->view->setVar('page', $page);
     }
     
     public function addAction()
@@ -79,7 +93,6 @@ class AdminProductController extends AdminBaseController
             $product->link = TranslitConverter::toTranslit($product->title);
  
             if ($this->request->hasFiles() == true) {
-                
                 
                 $files = $this->request->getUploadedFiles();
 

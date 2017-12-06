@@ -20,7 +20,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				{% for product in products %}
+				{% for product in page.items %}
 				{% if product.stock > 0 %}
 				<tr>
 					<td class="name-w" >{{product.title}}</td> <td>{{product.price}} Грн.</td> <td>{{product.stock}} шт.</td>
@@ -44,7 +44,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				{% for product in products %}
+				{% for product in page.items %}
 				{% if product.stock <= 0 %}
 				<tr>
 					<td class="name-w" >{{product.title}}</td> <td>{{product.price}} Грн.</td> <td>{{product.stock}} шт.</td>
@@ -59,9 +59,18 @@
 				{% endfor %}
 			<tbody>
 		</table>		
-	</div>
-		
+	</div>	
 </div>
+<div class="paginator">
+	Cторінка {{page.current}} з {{page.total_pages}} <br><br>
+	<a href='/admin/product'> Перша </a>
+	<a href='/admin/product?page=<?= $page->before; ?>'> << Попередня  </a>
+	<a href='/admin/product?page=<?= $page->next; ?>'> Наступна >> </a>
+	<a href='/admin/product?page=<?= $page->last; ?>'> Остання </a>
+</div>
+
+
+
 <script type="text/javascript">
 function remov(id){
 

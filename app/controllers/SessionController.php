@@ -27,7 +27,9 @@ class SessionController extends Controller
                 if ($this->security->checkHash($password, $admin->password)) {
                     $this->session->set('admin', 'andriy');
                     header("Location: /admin");
-
+                }else {
+                    $error = 'Не вірний логін або пароль';
+                    $this->view->setVar('error', $error);
                 }
             } else {
                 $error = 'Не вірний логін або пароль';
