@@ -5,14 +5,6 @@ use Phalcon\Mvc\Router;
 $router = new Router(false);
 
 $router->add(
-    '/',
-    [
-        'controller' => 'index',
-        'action'     => 'index',
-    ]
-);
-
-$router->add(
     '/install',
     [
         'controller' => 'index',
@@ -21,9 +13,17 @@ $router->add(
 );
 
 $router->add(
+    '/',
+    [
+        'controller' => 'pages',
+        'action'     => 'index',
+    ]
+);
+
+$router->add(
     '/contact',
     [
-        'controller' => 'index',
+        'controller' => 'pages',
         'action'     => 'contact',
     ]
 );
@@ -120,7 +120,7 @@ $router->add(
 
 $router->notFound(
     [
-        'controller' => 'index',
+        'controller' => 'pages',
         'action'     => 'route404',
     ]
 );
