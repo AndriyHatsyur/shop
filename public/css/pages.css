@@ -1,0 +1,82 @@
+.container-fluid {
+    padding: 0;
+}
+.container {
+    max-width: 950px;
+}
+
+.header {
+    min-height: 120px;
+    padding-top: 10px;
+}
+
+.header-contact {
+    text-align: right;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    height: 7em; 
+    line-height: 2em;
+    padding-top: 5px;
+}
+
+.banner,.logo {
+    max-width: 100%;
+    margin: 0 auto;
+}
+.cart-img {
+    max-width: 30%;
+}
+
+.cart-info{
+    font-size: 80%;
+    color: rgb(26, 25, 25);
+ }
+
+.link-header {
+    color: rgb(26, 25, 25);
+}
+
+ .cart-info:hover, .link-header:hover {
+    color:#ff0099;
+}
+
+
+.bg-light,.navbar-light {
+    border-top: 1px solid black;
+    border-bottom: 2px solid black;
+    background-color: white !important;
+    padding: 0;
+    margin-bottom: 1px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 1em;
+    font-weight: 200;
+    color: rgb(26, 25, 25);
+    text-transform: uppercase;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color:#ff0099;
+}
+
+.content {
+    padding-top: 10px;
+}
+
+.sidebar {
+   background-color: green;
+}
+
+.bag {
+    height: 120px;
+}
+.footer {
+    position: absolute;
+    clear: both;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background-color: grey;
+}

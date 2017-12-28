@@ -29,6 +29,14 @@ $router->add(
 );
 
 $router->add(
+    '/statu-predstavnukom',
+    [
+        'controller' => 'pages',
+        'action'     => 'statuPredstavnukom',
+    ]
+);
+
+$router->add(
     '/admin/category',
     [
         'controller' => 'admin_Category',
