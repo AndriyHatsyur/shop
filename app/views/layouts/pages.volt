@@ -24,7 +24,7 @@
                 <a class="nav-item nav-link" href="/">Головна <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="#">розпродаж</a>
                 <a class="nav-item nav-link" href="/staty-predstavnykom">стати предстаником</a>
-                <a class="nav-item nav-link" href="/contact">Каталог</a>
+                <a class="nav-item nav-link" target="_blanck" href="http://www.avon.ua/PRSuite/custonlineOrderEBrochure.page?custRepOrdr=1&acNo=MTM0MzM1NzE%3D&source=V0lER1Q=&c=vbrochure&s=brochurewidget_vbrochure">Каталог</a>
                 <a class="nav-item nav-link" href="/contact">Контакти</a>
             </div>
         </div>
@@ -118,6 +118,7 @@
         <a class="nav-item nav-link" href="/">Головна <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="#">розпродаж</a>
         <a class="nav-item nav-link" href="/staty-predstavnykom">стати предстаником</a>
+        <a class="nav-item nav-link" target="_blanck" href="http://www.avon.ua/PRSuite/custonlineOrderEBrochure.page?custRepOrdr=1&acNo=MTM0MzM1NzE%3D&source=V0lER1Q=&c=vbrochure&s=brochurewidget_vbrochure">Каталог</a>        
         <a class="nav-item nav-link" href="/contact">Контакти</a>
     </nav>
     <div class="social">
