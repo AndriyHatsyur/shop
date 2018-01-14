@@ -18,7 +18,7 @@ class PagesController extends BaseController
         $this->view->setVar('title', $title);
     }
 
-    public function statuPredstavnukomAction()
+    public function statyPredstavnykomAction()
     {
         $title = "Стати прндставником";
         $this->view->setVar('title', $title);

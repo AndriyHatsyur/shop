@@ -10,6 +10,10 @@
     padding-top: 10px;
 }
 
+.header-logo {
+    text-align: center;
+}
+
 .header-contact {
     text-align: right;
     font-size: 0.85em;
@@ -42,41 +46,158 @@
 
 
 .bg-light,.navbar-light {
-    border-top: 1px solid black;
-    border-bottom: 2px solid black;
+    border-top: 1px solid rgb(158, 156, 156);
+    border-bottom: 1px solid rgb(158, 156, 156);
     background-color: white !important;
-    padding: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
     margin-bottom: 1px;
+    -webkit-box-shadow: 0px 11px 26px -14px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 11px 26px -14px rgba(0,0,0,0.75);
+    box-shadow: 0px 11px 26px -14px rgba(0,0,0,0.75);
 }
 
 .navbar-light .navbar-nav .nav-link {
     font-family: Arial,Helvetica,sans-serif;
     font-size: 1em;
-    font-weight: 200;
-    color: rgb(26, 25, 25);
+    font-weight: lighter;
+    color: rgb(65, 65, 65);
     text-transform: uppercase;
+    padding-right: 25px;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
     color:#ff0099;
 }
 
+.navbar-light .navbar-toggler, .navbar-light .navbar-toggler:focus{
+    border: 0;
+    margin: 1px;
+}
+
+button:focus {
+    outline: none;
+}
+
+.slider {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar {
+    text-align: center;
+}
+
 .content {
     padding-top: 10px;
 }
 
-.sidebar {
-   background-color: green;
+.main {
+    padding-right: 25px;
+}
+
+.product-slide {
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.product-slide a {
+    color: rgb(41, 40, 40);
+    font-size: 0.9rem;
+}
+
+.product-slide a:hover {
+    color:#ff0099;
+}
+
+.price {
+    font-size: 0.9rem;
+    padding-top: 5px;
+}
+
+.price-old {
+    margin-right: 10px;
+    text-decoration: line-through;
+    text-decoration-color: #ff0099;  
+}
+
+.price-new {
+    color:#ff0099;
+}
+
+.product-img {
+   width: 80%;
+}
+
+.product-slide h5 {
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 7px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgb(172, 172, 172);
 }
 
 .bag {
-    height: 120px;
+    height: 240px;;
 }
 .footer {
+    font-family: Arial,Helvetica,sans-serif;
     position: absolute;
     clear: both;
     bottom: 0;
-    height: 100px;
+    height:220px;;
     width: 100%;
-    background-color: grey;
+    background-color: rgb(0, 0, 0);
+    padding: 35px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-weight: lighter;
+    -webkit-box-shadow: 3px -4px 44px -13px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px -4px 44px -13px rgba(0,0,0,0.75);
+    box-shadow: 3px -4px 44px -13px rgba(0,0,0,0.75);
 }
+
+.footer h2 {
+    font-family: Courier;
+    font-weight: 100;
+}
+
+.footer nav {
+    margin-bottom: 20px;
+}
+
+.footer nav a {
+    display: inline;
+    text-transform: uppercase;
+    color: rgb(153, 153, 153);
+    font-weight: 0.88rem;
+}
+
+.footer nav a:hover {
+    color: #ff0099;
+    border-bottom: 1px solid #ff0099;;
+}
+
+.social {
+    margin: 20px;
+}
+
+.social a {
+    display: inline-block;
+    height: auto;
+    margin-left: 5px;
+}
+
+.social a:hover {
+    background-color: rgb(34, 34, 34);
+    border-radius: 50%;
+}
+
+.footer p {
+    color: rgb(153, 153, 153); 
+}
+

@@ -29,10 +29,10 @@ $router->add(
 );
 
 $router->add(
-    '/statu-predstavnukom',
+    '/staty-predstavnykom',
     [
         'controller' => 'pages',
-        'action'     => 'statuPredstavnukom',
+        'action'     => 'statyPredstavnykom',
     ]
 );
 
