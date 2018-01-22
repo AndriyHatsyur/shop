@@ -37,6 +37,54 @@ $router->add(
 );
 
 $router->add(
+    '/admin/message',
+    [
+        'controller' => 'admin_Message',
+        'action'     => 'index',
+    ]
+);
+
+$router->add(
+    '/admin/message/delete',
+    [
+        'controller' => 'admin_Message',
+        'action'     => 'delete',
+    ]
+);
+
+$router->add(
+    '/admin/message/view/{id:[0-9]+}',
+    [
+        'controller' => 'admin_Message',
+        'action'     => 'view',
+    ]
+);
+
+$router->add(
+    '/admin/representative',
+    [
+        'controller' => 'admin_Representative',
+        'action'     => 'index',
+    ]
+);
+
+$router->add(
+    '/admin/representative/delete',
+    [
+        'controller' => 'admin_Representative',
+        'action'     => 'delete',
+    ]
+);
+
+$router->add(
+    '/admin/representative/view/{id:[0-9]+}',
+    [
+        'controller' => 'admin_Representative',
+        'action'     => 'view',
+    ]
+);
+
+$router->add(
     '/admin/category',
     [
         'controller' => 'admin_Category',

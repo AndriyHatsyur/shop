@@ -44,6 +44,10 @@ class AdminCategoryController extends AdminBaseController
 
         $category = Category::findFirstById($id);
 
+        if(!$category){
+            header("Location: /page-not-found");
+        }
+
         $this->view->setVar('category', $category);
 
         if ($this->request->isPost()) {

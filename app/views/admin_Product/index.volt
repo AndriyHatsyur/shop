@@ -26,7 +26,7 @@
 					<td class="name-w" >{{product.title}}</td> <td>{{product.price}} Грн.</td> <td>{{product.stock}} шт.</td>
 					<td>
 						<a href="/admin/product/edit/{{product.id}}" class="icon-edit">
-							<span class="fa fa-pencil-square-o"></span>
+							<span class="far fa-edit"></span>
 						</a>
 						<span class="fa fa-times icon-delete" onclick="remov({{product.id}})"></span>
 					</td>

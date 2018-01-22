@@ -132,6 +132,9 @@ class AdminProductController extends AdminBaseController
         } 
 
         $product = Product::findFirstById($id);
+        if(!$product){
+            header("Location: /page-not-found");
+        }
         $categories = Category::find();
         $this->view->setVar('alert', $alert);
         $this->view->setVar('product', $product);

@@ -23,7 +23,7 @@
             <div class="navbar-nav container">
                 <a class="nav-item nav-link" href="/">Головна <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="#">розпродаж</a>
-                <a class="nav-item nav-link" href="/staty-predstavnykom">стати предстаником</a>
+                <a class="nav-item nav-link" href="/staty-predstavnykom#header">стати предстаником</a>
                 <a class="nav-item nav-link" target="_blanck" href="http://www.avon.ua/PRSuite/custonlineOrderEBrochure.page?custRepOrdr=1&acNo=MTM0MzM1NzE%3D&source=V0lER1Q=&c=vbrochure&s=brochurewidget_vbrochure">Каталог</a>
                 <a class="nav-item nav-link" href="/contact">Контакти</a>
             </div>
@@ -40,16 +40,16 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <a href="/staty-predstavnykom"><img class="d-block w-100" src="/public/img/slider/1.png"></a>
+                <a href="/staty-predstavnykom#header"><img class="d-block w-100" src="/public/img/slider/1.png"></a>
             </div>
             <div class="carousel-item">
-                <a href="/staty-predstavnykom"><img class="d-block w-100" src="/public/img/slider/2.png"></a>
+                <a href="/staty-predstavnykom#header"><img class="d-block w-100" src="/public/img/slider/2.png"></a>
             </div>
             <div class="carousel-item">
-                <a href="/staty-predstavnykom"><img class="d-block w-100" src="/public/img/slider/3.png"></a>
+                <a href="/staty-predstavnykom#header"><img class="d-block w-100" src="/public/img/slider/3.png"></a>
             </div>
             <div class="carousel-item">
-                <a href="/staty-predstavnykom"><img class="d-block w-100" src="/public/img/slider/4.png"></a>
+                <a href="/staty-predstavnykom#header"><img class="d-block w-100" src="/public/img/slider/4.png"></a>
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -72,9 +72,9 @@
             </div>
             <div class="col-lg-3 col-md-4 sidebar">
                 
-                <a href="/staty-predstavnykom"><img class="logo" src="/public/img/avon-predstav.png"></a>
+                <a href="/staty-predstavnykom#header"><img class="logo" src="/public/img/avon-predstav.png"></a>
                 <br><br>
-                <a href="/staty-predstavnykom"><img class="logo" src="/public/img/avon-koord.png"></a>
+                <a href="/staty-predstavnykom#header"><img class="logo" src="/public/img/avon-koord.png"></a>
             </div>
     
         </div>
@@ -117,7 +117,7 @@
     <nav>
         <a class="nav-item nav-link" href="/">Головна <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="#">розпродаж</a>
-        <a class="nav-item nav-link" href="/staty-predstavnykom">стати предстаником</a>
+        <a class="nav-item nav-link" href="/staty-predstavnykom#header">стати предстаником</a>
         <a class="nav-item nav-link" target="_blanck" href="http://www.avon.ua/PRSuite/custonlineOrderEBrochure.page?custRepOrdr=1&acNo=MTM0MzM1NzE%3D&source=V0lER1Q=&c=vbrochure&s=brochurewidget_vbrochure">Каталог</a>        
         <a class="nav-item nav-link" href="/contact">Контакти</a>
     </nav>

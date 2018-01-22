@@ -190,3 +190,11 @@ a.nav-link.menu:hover{
 .paginator a {
 	color: grey;
 }
+
+.message-new {
+	color: rgb(91, 165, 91);
+}
+
+.message-old {
+	color: grey;
+}

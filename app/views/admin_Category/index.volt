@@ -15,7 +15,7 @@
 			<td>{{category.name}}</td> <td>{{category.number}}</td>
 			<td class="text-center">
 				<a href="/admin/category/edit/{{category.id}}" class="icon-edit">
-					<span class="fa fa-pencil-square-o"></span>
+					<span class="far fa-edit"></span>
 				</a>
 				<span class="fa fa-times icon-delete" onclick="remov({{category.id}})"></span>
 			</td>
