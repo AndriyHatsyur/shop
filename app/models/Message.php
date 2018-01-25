@@ -10,6 +10,8 @@ class Message extends Model
 
     public $mobile;
 
+    public $email;
+
     public $text;
 
     public $status = "new";

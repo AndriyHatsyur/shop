@@ -25,7 +25,7 @@
     </div>
     <input type='submit' class="btn btn-pink btn-radius" value="Відправити">
 </form>
-{% if alert is defined %}
+<?php if (isset($alert)) { ?>
 <div class="modal" tabindex="-1" role="dialog" id="exampleModal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -36,7 +36,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>{{alert}}</p>
+          <p><?= $alert ?></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-pink" data-dismiss="modal">Close</button>
@@ -44,7 +44,7 @@
       </div>
     </div>
   </div>
-{% endif %}	
+<?php } ?>	
 <script type="text/javascript">
     $( document ).ready(function() {
         $('#exampleModal').modal('show');

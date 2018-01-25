@@ -1,0 +1,67 @@
+
+<?php if (isset($alert)) { ?>
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content btn-radius">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel"> </h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <?= $alert ?>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary btn-radius" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+<?php } ?>	
+
+
+
+<h2>Список представників для реєстрації </h2>
+<br>
+<br>
+<table class="admin-list">
+    <thead>
+        <tr>
+            <th>Ім`я</th> <th>Мобільний телефон </th> <th></th>
+        </tr>
+    </thead>
+    <tbody>
+		<?php foreach ($representatives as $representative) { ?>
+        <tr class="message-<?= $representative->status ?>">
+			<td><?= $representative->name ?></td> <td><?= $representative->mobile ?></td>
+			<td class="text-center">
+                    <a href="/admin/representative/view/<?= $representative->id ?>" class="icon-edit">
+                        <span class="fas fa-sign-out-alt"></span>
+                    </a>
+
+                <span class="fa fa-times icon-delete" onclick="remov(<?= $representative->id ?>)"></span>
+                
+			</td>
+		</tr>
+		<?php } ?>
+    <tbody>
+</table>
+
+<script type="text/javascript">
+	function remov(id){
+
+		$.ajax({
+			url: '/admin/representative/delete',
+			type: "POST",
+			data: "id="+id,
+			cache: false,
+			success: function (html){
+				$('.wrapper').html(html);
+				$('#exampleModal').modal('show');
+			}
+		});
+	}	
+</script>
+

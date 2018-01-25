@@ -28,6 +28,16 @@ return
 		            'notNull'       => true,
 		        ]
 		),
+
+		new Column(
+		    'email',
+		        [
+		            'type'          => Column::TYPE_VARCHAR,
+		            'size'          => 30,
+		            'notNull'       => true,
+		        ]
+		),
+
 		new Column(
             'text',
             [
