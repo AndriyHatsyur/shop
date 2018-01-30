@@ -29,23 +29,22 @@ class Mail
         $this->mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
         $this->mail->Port = 465; // set the SMTP port for the GMAIL server
         $this->mail->Username = "myavon.pp.ua@gmail.com"; // GMAIL username
-        $this->mail->Password = "****"; // GMAIL password
+        $this->mail->Password = "Avon2018"; // GMAIL password
         $this->mail->isHTML(true);                                  // Set email format to HTML
         $this->mail->SetFrom('myavon.pp.ua@gmail.com', 'MY AVON');
 
     }
 
-    public function sendMailUserContact(object $message)
+    public function sendMailUserContact($message)
     {
         $this->mail->AddAddress($message->email);
         $this->mail->Subject = 'Ваше повідомлення отримано!';
         $this->mail->Body    = $message->name .' ваше повідомлення отримано, найближчим часом ми звами зв`яжемось.';
         $this->mail->Send();
-
         
     }
 
-    public function sendMailAdminContact (object $message)
+    public function sendMailAdminContact ($message)
     {
         $this->mail->AddAddress($this->emailAdmin);
         $this->mail->Subject = 'Нове повідомлення з myavon.pp.ua! Від ' . $message->name;
@@ -54,7 +53,7 @@ class Mail
         $this->mail->Send();
     }
 
-    public function sendMailUserRepresentative(object $representative)
+    public function sendMailUserRepresentative($representative)
     {
         $this->mail->AddAddress($representative->email);
         $this->mail->Subject = 'Вітаємо!!! Ваша заявку на реєстрацію отримано!';
@@ -62,7 +61,7 @@ class Mail
         $this->mail->Send();        
     }
 
-    public function sendMailAdminRepresentative (object $representative)
+    public function sendMailAdminRepresentative ($representative)
     {
         $this->mail->AddAddress($this->emailAdmin);
         $this->mail->Subject = 'Нова заявка на реєстрацію з myavon.pp.ua! Від ' . $representative->name;

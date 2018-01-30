@@ -18,7 +18,7 @@ class IndexController extends BaseController
 
     	$admin ->password = $this->security->hash($password);
 
-        $admin ->save();
+		$admin ->save();
 		
     }
    

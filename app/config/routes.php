@@ -29,6 +29,22 @@ $router->add(
 );
 
 $router->add(
+    '/signup',
+    [
+        'controller' => 'user',
+        'action'     => 'signup',
+    ]
+);
+
+$router->add(
+    '/login',
+    [
+        'controller' => 'user',
+        'action'     => 'login',
+    ]
+);
+
+$router->add(
     '/staty-predstavnykom',
     [
         'controller' => 'pages',
