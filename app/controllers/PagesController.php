@@ -5,7 +5,7 @@
 class PagesController extends BaseController
 {
     public function initialize(){
-
+        parent::initialize();
         $this->assets->addCss('css/pages.css');
     }
     public function indexAction()
@@ -80,6 +80,7 @@ class PagesController extends BaseController
 
     public function route404Action()
     {
+        $this->view->setVar('title', 'Page not found');
     	echo "page not found";
     }
 

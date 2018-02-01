@@ -1,6 +1,9 @@
 <?php
 
 use Phalcon\Mvc\Model;
+use Phalcon\Validation;
+use Phalcon\Validation\Validator\Uniqueness;
+use Phalcon\Validation\Validator\Email;
 
 class User extends Model
 {
@@ -21,6 +24,15 @@ class User extends Model
             new Uniqueness(
                 [
                     'message' => 'Користувач з такою поштою уже зареєстрований',
+                ]
+            )
+        );
+
+        $validator->add(
+            'email',
+            new Email(
+                [
+                    "message" => "Адресу елекронної пошти введено невірно"
                 ]
             )
         );

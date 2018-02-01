@@ -45,6 +45,14 @@ $router->add(
 );
 
 $router->add(
+    '/logout',
+    [
+        'controller' => 'user',
+        'action'     => 'logout',
+    ]
+);
+
+$router->add(
     '/staty-predstavnykom',
     [
         'controller' => 'pages',
