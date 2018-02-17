@@ -56,7 +56,7 @@ class Mail
     public function sendMailUserRepresentative($representative)
     {
         $this->mail->AddAddress($representative->email);
-        $this->mail->Subject = 'Вітаємо!!! Ваша заявку на реєстрацію отримано!';
+        $this->mail->Subject = 'Вітаємо!!! Вашу заявку на реєстрацію отримано!';
         $this->mail->Body    = 'Вітаємо, ' .$representative->name .'! Вашу заявку на реєстрацію отримано, найближчим часом ми звами зв`яжемось.';
         $this->mail->Send();        
     }

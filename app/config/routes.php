@@ -61,6 +61,24 @@ $router->add(
 );
 
 $router->add(
+    '/shop',
+    [
+        'controller' => 'shop',
+        'action'     => 'index',
+    ]
+);
+
+$router->add(
+    '/shop/product/:params',
+    [
+        'controller' => 'shop',
+        'action'     => 'product',
+        'link'      => 1,
+
+    ]
+);
+
+$router->add(
     '/admin/message',
     [
         'controller' => 'admin_Message',

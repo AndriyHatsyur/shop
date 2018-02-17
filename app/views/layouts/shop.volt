@@ -2,7 +2,6 @@
     {% include 'layouts/components/header.volt' %}
     {% include 'layouts/components/menu.volt' %}
 </header>
-{% include 'layouts/components/slider.volt' %}
 <main>
     <div class="container content">
         <div class="row">
@@ -12,12 +11,10 @@
                 </article>
             </div>
             <div class="col-lg-3 col-md-4 sidebar">
-                
-                <a href="/staty-predstavnykom#header"><img class="logo" src="/public/img/avon-predstav.png"></a>
-                <br><br>
-                <a href="/staty-predstavnykom#header"><img class="logo" src="/public/img/avon-koord.png"></a>
+                {% include 'layouts/components/sidebar-shop.volt' %}
+
             </div>
-    
+
         </div>
     </div>
 </main>
