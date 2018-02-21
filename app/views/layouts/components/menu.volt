@@ -12,3 +12,17 @@
         </div>
     </div>
 </nav>
+<script>
+    $(function () {
+        $(' .navbar-nav a ').each(function () {
+            var location = window.location.href.split('/')[3];
+            var link = this.href.split('/')[3];
+            location = location.split('?')[0];
+            link = link.split('?')[0];
+
+            if(location == link) {
+                $(this).addClass('active');
+            }
+        });
+    });
+</script>

@@ -23,7 +23,7 @@
 				{% for product in page.items %}
 				{% if product.stock > 0 %}
 				<tr>
-					<td class="name-w" >{{product.title}}</td> <td>{{product.price}} Грн.</td> <td>{{product.stock}} шт.</td>
+					<td class="name-w" >{{product.title}}</td> <td>{{product.sale}} Грн.</td> <td>{{product.stock}} шт.</td>
 					<td>
 						<a href="/admin/product/edit/{{product.id}}" class="icon-edit">
 							<span class="far fa-edit"></span>

@@ -10,6 +10,8 @@ class Category extends Model
 
     public $number;
 
+    public $link;
+
     public function initialize()
     {
         $this->hasMany("id", "ProductCategory", "category_id");

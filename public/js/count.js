@@ -1,7 +1,7 @@
 $('.minus').click(function () {
 
     var count = Number($('.count').val());
-    if(count > 0) {
+    if(count > 1) {
         $('.count').val(count - 1);
     }
 });

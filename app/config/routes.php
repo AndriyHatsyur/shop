@@ -79,6 +79,16 @@ $router->add(
 );
 
 $router->add(
+    '/shop/category/:params',
+    [
+        'controller' => 'shop',
+        'action'     => 'category',
+        'link'      => 1,
+
+    ]
+);
+
+$router->add(
     '/admin/message',
     [
         'controller' => 'admin_Message',

@@ -28,4 +28,12 @@ return
 		            'notNull'       => true,
 		        ]
 		),
+        new Column(
+            'link',
+            [
+                'type'         => Column::TYPE_VARCHAR,
+                'size'         => 50,
+                'notNull'      => true,
+            ]
+        ),
 	];

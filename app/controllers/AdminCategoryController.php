@@ -19,7 +19,10 @@ class AdminCategoryController extends AdminBaseController
         $this->view->setVar('title', "Додати категорію");
 
         if ($this->request->isPost()) {
-            $category = new Category($_POST);
+            $category = new Category();
+            $category->name = $this->request->getPost('name');
+            $category->number = $this->request->getPost('number');
+            $category->link = TranslitConverter::toTranslit($category->name);
 
             if ($category->save()) {
                 
@@ -54,6 +57,7 @@ class AdminCategoryController extends AdminBaseController
           
             $category->name = $this->request->getPost('name');
             $category->number = $this->request->getPost('number');
+            $category->link = TranslitConverter::toTranslit($category->name);
 
             if ($category->save()) {
                 
