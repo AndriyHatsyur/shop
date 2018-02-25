@@ -7,7 +7,7 @@ class BaseController extends Controller
     public function initialize()
     {
         $this->checkLogin();
-  
+        $this->setCart();
     }
 
     public function checkLogin()
@@ -20,5 +20,22 @@ class BaseController extends Controller
         }
             
     }
+
+    public function setCart()
+    {
+        if(!$this->session->get('cart')) {
+
+            $cart =new Cart();
+            $this->session->set('cart', $cart);
+
+        }else {
+            $cart = $this->session->get('cart');
+            $count = $cart->getCount();
+            $this->view->setVar('count', $count);
+        }
+
+    }
+
+
    
 }

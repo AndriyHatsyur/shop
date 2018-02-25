@@ -5,13 +5,16 @@
 class PagesController extends BaseController
 {
     public function initialize(){
+
         parent::initialize();
         $this->assets->addCss('css/pages.css');
+
     }
     public function indexAction()
     {
     	$title = "home";
         $this->view->setVar('title', $title);
+
     }
 
     public function contactAction()

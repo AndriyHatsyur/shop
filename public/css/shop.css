@@ -54,7 +54,13 @@
 
 .btn-add:hover {
     background-color: rgba(255, 0, 153, 0.658);
+}
 
+.btn-add:active, .btn-add:focus{
+    box-shadow: none;
+    -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -o-transform: scale(0.95);
 }
 
 .sidebar {

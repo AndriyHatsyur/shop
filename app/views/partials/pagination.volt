@@ -3,7 +3,7 @@
     <div class="paginators">
         <nav aria-label="Page navigation example">
             <ul class="pagination">
-                {% if page.current <= 2 %}
+                {% if page.current < 2 %}
                     <li class="page-item disabled">
                         <a class="page-link" href="?page={{ page.before}}" aria-label="Next">
                             <span aria-hidden="true">&laquo;</span>
@@ -89,9 +89,10 @@
 
 <script>
     $(function () {
-        $(' li a').each(function () {
+        $(' .paginators a:not(:last):not(:first)').each(function () {
             var location = window.location.href;
             var link = this.href;
+
             if(location == link) {
                 $(this).addClass('active');
             }

@@ -7,9 +7,33 @@
             <a href="/shop/product/{{product.link}}"><img class="product-img" src="{{product.image}}"></a>
             <br>
             <p class="price"><span class="price-old">{{product.price}} грн</span> <span class="price-new">{{product.sale}} грн</span> </p>
-            <button class="btn btn-add" id="{{product.id}}">Замовити</button>
+            <button class="btn btn-add" data-id="{{product.id}}" id="b-send">Замовити</button>
         </div>
     </div>
     {% endfor %}
 </div>
 {% include 'partials/pagination.volt' %}
+
+<script type="text/javascript">
+    $("#b-send").click(
+        function() {
+            var product_id = $( this ).data('id');
+            var data = {'product_id': product_id, 'count': 1 }
+            $('.btn-add').blur();
+            $.ajax({
+                url: '/shop/cart/add',
+                type: "POST",
+                data: data,
+                cache: false,
+                success: function (){
+                    var count = Number($('#cart-count').text());
+                    $('#cart-count').text(count + data.count);
+
+                },
+                error: function () {
+                    alert('Error ');
+                }
+            });
+        }
+    );
+</script>
