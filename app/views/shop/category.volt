@@ -1,3 +1,4 @@
+{% include 'partials/alert-shop.volt' %}
 <h2 class="shop-header">Розпродаж косметики AVON</h2>
 <div class="row">
     {% for product in page.items %}
@@ -8,7 +9,7 @@
             <a href="/shop/product/{{product.product.link}}"><img class="product-img" src="{{product.product.image}}"></a>
             <br>
             <p class="price"><span class="price-old">{{product.product.price}} грн</span> <span class="price-new">{{product.product.sale}} грн</span> </p>
-            <button class="btn btn-add" data-id="{{product.product.id}}" id="b-send">Замовити</button>
+            <button class="btn btn-add" data-id="{{product.product.id}}">Замовити</button>
         </div>
     </div>
     {% endif %}
@@ -18,7 +19,7 @@
 {% include 'partials/pagination.volt' %}
 
 <script type="text/javascript">
-    $("#b-send").click(
+    $(".btn-add").click(
         function() {
             var product_id = $( this ).data('id');
             var data = {'product_id': product_id, 'count': 1 }
@@ -31,6 +32,7 @@
                 success: function (){
                     var count = Number($('#cart-count').text());
                     $('#cart-count').text(count + data.count);
+                    $('#exampleModal').modal('show');
 
                 },
                 error: function () {

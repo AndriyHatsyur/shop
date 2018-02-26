@@ -27,10 +27,11 @@ class BaseController extends Controller
 
             $cart =new Cart();
             $this->session->set('cart', $cart);
+            $this->view->setVar('count', 0);
 
         }else {
             $cart = $this->session->get('cart');
-            $count = $cart->getCount();
+            $count = $cart->getCountProducts();
             $this->view->setVar('count', $count);
         }
 

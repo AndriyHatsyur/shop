@@ -98,6 +98,15 @@ $router->add(
 );
 
 $router->add(
+    '/shop/cart',
+    [
+        'controller' => 'cart',
+        'action'     => 'index',
+
+    ]
+);
+
+$router->add(
     '/admin/message',
     [
         'controller' => 'admin_Message',

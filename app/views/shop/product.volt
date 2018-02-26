@@ -1,3 +1,4 @@
+{% include 'partials/alert-shop.volt' %}
 <div class="row">
     <div class="col-md-6 product-image">
         <img class="product-img" src="{{product.image}}">
@@ -35,6 +36,7 @@
                     var count = Number($('#cart-count').text());
                     count += Number(data[0].value);
                     $('#cart-count').text(count);
+                    $('#exampleModal').modal('show');
                 },
                 error: function () {
                     alert('Error ');

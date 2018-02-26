@@ -186,3 +186,8 @@
 .about-text {
     font-size: 0.95em;
 }
+
+.modal-shop {
+    text-align: center;
+    padding-top: 15px;
+}

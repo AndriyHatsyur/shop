@@ -14,7 +14,7 @@
                 <a  class="link-header" href="/signup">Реєстрація</a>
             {% endif %}	
             <br>
-            <a  class="cart-info" href="#">
+            <a  class="cart-info" href="/shop/cart" title="Кошик">
                 <img class="cart-img" src="/public/img/cart.png" alt="Кошик: товарів {{ count }}шт">
                 Товарів: <span id="cart-count">{{ count }}</span> шт.
             </a>

@@ -89,7 +89,7 @@ class ShopController extends BaseController
         $paginator = new PaginatorModel(
             [
                 'data'  => $products,
-                'limit' => 1,
+                'limit' => 10,
                 'page'  => (int)$currentPage,
             ]
         );

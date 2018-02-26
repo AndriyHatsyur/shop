@@ -8,6 +8,20 @@ class CartController extends BaseController
     public function initialize(){
         parent::initialize();
         $this->assets->addCss('css/pages.css');
+        $this->assets->addCss('css/cart.css');
+        $this->cart = $this->session->get('cart');
+
+    }
+
+    public function indexAction()
+    {
+        $this->view->setVar('title', 'Кошик');
+
+        $products = $this->cart->getProducts();
+        $totalSum = $this->cart->getTotalSum();
+
+        $this->view->setVar('products', $products);
+        $this->view->setVar('totalSum', $totalSum);
 
     }
 
@@ -15,22 +29,21 @@ class CartController extends BaseController
     {
         if ($this->request->isAjax()) {
 
-            $cart = $this->session->get('cart');
             $product_id = $this->request->getPost('product_id');
             $count = $this->request->getPost('count');
-            $cart->addProduct($product_id, $count);
-            $this->session->set('cart', $cart);
+            $product = Product::findFirstById($product_id);
+            $this->cart->addProduct($product_id, $product, $count);
+
         }
-        echo '<pre>';
-        var_dump($this->session->get('cart'));
-        die();
-//
-//        $this->dispatcher->forward(
-//            [
-//                'controller' => 'pages',
-//                'action'     => 'route404',
-//            ]
-//        );
+
+        $this->dispatcher->forward(
+            [
+                'controller' => 'pages',
+                'action'     => 'route404',
+            ]
+        );
 
     }
+
+
 }
