@@ -45,5 +45,32 @@ class CartController extends BaseController
 
     }
 
+    public function deleteAction()
+    {
+        if ($this->request->isAjax()) {
+            $id = $this->request->getPost('id');
+            $this->cart->deleteProduct($id);
+        }
+
+        return $this->dispatcher->forward([
+            'action' => 'index'
+        ]);
+    }
+
+    public function editAction()
+    {
+        if ($this->request->isAjax()) {
+            $id = $this->request->getPost('id');
+            $count = $this->request->getPost('count');
+            $product = $this->cart->getProduct($id);
+            if ($product)
+                $product->changeCount($count);
+        }
+
+        return $this->dispatcher->forward([
+            'action' => 'index'
+        ]);
+    }
+
 
 }

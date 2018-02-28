@@ -17,14 +17,14 @@
 				<a href="/admin/category/edit/{{category.id}}" class="icon-edit">
 					<span class="far fa-edit"></span>
 				</a>
-				<span class="fa fa-times icon-delete" onclick="remov({{category.id}})"></span>
+				<span class="fa fa-times icon-delete" onclick="remove({{category.id}})"></span>
 			</td>
 		</tr>
 		{% endfor %}
     <tbody>
 </table>
 <script type="text/javascript">
-	function remov(id){
+	function remove(id){
 
 		$.ajax({
 			url: '/admin/category/delete',

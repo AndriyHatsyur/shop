@@ -15,6 +15,7 @@
 .card-shop {
     padding: 10px;
     text-align: center;
+    min-height: 100%;
 }
 
 .card-product {
@@ -25,6 +26,11 @@
 .card-product:hover {
     padding: 20px;
     border: 1px solid rgba(128, 128, 128, 0.39);
+    height: 100%;
+}
+
+.product-title {
+    min-height: 50px;
 }
 
 .card-product a {
@@ -191,3 +197,13 @@
     text-align: center;
     padding-top: 15px;
 }
+
+.close {
+    color: white;
+    margin-right: -20px;
+}
+
+.close:hover{
+    color: #ff0099;
+}
+

@@ -37,6 +37,13 @@ class Cart
 
     }
 
+    public function deleteProduct($id)
+    {
+        if ($this->check($id))
+            unset($this->products[$id]);
+
+    }
+
     public function getCountProducts()
     {
         $count = 0;

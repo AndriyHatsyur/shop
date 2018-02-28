@@ -5,7 +5,7 @@
         {% if product.product.stock > 0 %}
     <div class="col-lg-6 col-md-6 card-shop">
         <div class="card-product">
-            <a href="/shop/product/{{product.product.link}}"><p>{{product.product.title}}</p></a>
+            <a href="/shop/product/{{product.product.link}}"><p class="product-title">{{product.product.title}}</p></a>
             <a href="/shop/product/{{product.product.link}}"><img class="product-img" src="{{product.product.image}}"></a>
             <br>
             <p class="price"><span class="price-old">{{product.product.price}} грн</span> <span class="price-new">{{product.product.sale}} грн</span> </p>

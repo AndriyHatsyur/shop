@@ -26,12 +26,52 @@
 }
 
 .p-name {
-    width: 40%;
+    width: 50%;
 }
 
-.p-price, .p-count, .p-price {
-    width: 20%;
+.p-name a {
+    color: #212529;
 }
+
+.p-name a:hover {
+    color: black;
+}
+
+.p-price, .p-count{
+    width: 15%;
+}
+
+.p-sum, .p-del {
+    width: 10%;
+}
+
+.p-del {
+    width: 5%;
+}
+
+.icon-delete {
+    color: grey;
+    cursor: pointer;
+}
+
+.icon-delete:hover {
+    color: red;
+}
+
+.fa-plus,.fa-minus {
+    font-size: 1.4em;
+    font-weight: 100;
+    color: darkgray;
+    padding-right: 5px;
+    padding-left: 2px;
+    padding-top: 6px;
+    cursor: pointer;
+}
+
+.fa-plus:hover,.fa-minus:hover {
+    color: #ff0099;
+}
+
 
 .cart-empty {
     font-size: 1.2em;
@@ -40,4 +80,8 @@
     text-align: right;
     padding-top: 10px;
     font-size: 1.2em;
+}
+
+.cart-footer a:hover {
+    color: white;
 }

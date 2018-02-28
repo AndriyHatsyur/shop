@@ -1,8 +1,8 @@
 {% include 'partials/alert-shop.volt' %}
 <h2 class="shop-header">Розпродаж косметики AVON</h2>
 <div class="row">
-    {% for product in page.items %}
-    <div class="col-lg-6 col-md-6 card-shop">
+{% for product in page.items %}
+    <div class="col-lg-6 card-shop">
         <div class="card-product">
             <a href="/shop/product/{{product.link}}"><p class="product-title">{{product.title}}</p></a>
             <a href="/shop/product/{{product.link}}"><img class="product-img" src="{{product.image}}"></a>
@@ -11,7 +11,8 @@
             <button class="btn btn-add" data-id="{{product.id}}">Замовити</button>
         </div>
     </div>
-    {% endfor %}
+
+{% endfor %}
 </div>
 {% include 'partials/pagination.volt' %}
 

@@ -98,6 +98,24 @@ $router->add(
 );
 
 $router->add(
+    '/shop/cart/delete',
+    [
+        'controller' => 'cart',
+        'action'     => 'delete',
+
+    ]
+);
+
+$router->add(
+    '/shop/cart/edit',
+    [
+        'controller' => 'cart',
+        'action'     => 'edit',
+
+    ]
+);
+
+$router->add(
     '/shop/cart',
     [
         'controller' => 'cart',
