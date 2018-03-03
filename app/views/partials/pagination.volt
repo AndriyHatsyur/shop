@@ -94,7 +94,7 @@
             var link = this.href;
 
             if(location == link) {
-                $(this).addClass('active');
+                $(this).addClass('active-link');
             }
         });
     });

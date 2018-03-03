@@ -85,3 +85,8 @@
 .cart-footer a:hover {
     color: white;
 }
+
+.order {
+    width: 50%;
+    padding-top: 10px;
+}

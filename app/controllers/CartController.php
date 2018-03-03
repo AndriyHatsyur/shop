@@ -72,5 +72,54 @@ class CartController extends BaseController
         ]);
     }
 
+    public function sendOrderAction()
+    {
+        $this->view->title = "Оформити замовлення";
+
+        if ($this->request->isPost()) {
+
+            $address = new Address();
+            $address->name = $this->request->getPost('name', "striptags");
+            $address->surname = $this->request->getPost('surname', "striptags");
+            $address->email = $this->request->getPost('email', "email");
+            $address->region = $this->request->getPost('region', "striptags");
+            $address->area = $this->request->getPost('area', "striptags");
+            $address->city = $this->request->getPost('city', "striptags");
+            $address->mobile = $this->request->getPost('mobile', "striptags");
+            $address->post = $this->request->getPost('post', "striptags");
+
+            $order = new Order;
+            $order->sum = $this->cart->getTotalSum();
+            $order->count = $this->cart->getCountProducts();
+            $order->address = $address;
+
+            foreach ($this->cart->getProducts() as $p)
+            {
+                $product = new OrderProduct();
+                $product->count = $p->count;
+                $product->link = $p->link;
+                $product->image = $p->image;
+                $product->title = $p->title;
+                $product->price = $p->price;
+                $products[] = $product;
+
+            }
+
+            $order->orderProduct = $products;
+
+            if ($order->save())
+            {
+                $this->session->remove('cart');
+                $this->view->alert = 'Дякуємо, ваше замовлення отримано';
+            } else {
+
+                $this->view->alert = 'Вибачте сталась помилка спробуйте пізніше';
+            }
+
+
+        }
+    }
+
+
 
 }

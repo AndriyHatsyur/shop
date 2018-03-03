@@ -21,7 +21,7 @@
             link = link.split('?')[0];
 
             if(location == link) {
-                $(this).addClass('active');
+                $(this).addClass('active-link');
             }
         });
     });
