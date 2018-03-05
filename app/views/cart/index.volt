@@ -43,7 +43,7 @@
             data: "id="+id,
             cache: false,
             success: function (html){
-                console.log(id);
+               ;
                 $('.wrapper').html(html);
             },
             error: function () {
@@ -64,7 +64,7 @@
             data: data,
             cache: false,
             success: function (html){
-                console.log(data);
+
                 $('.wrapper').html(html);
 
             },

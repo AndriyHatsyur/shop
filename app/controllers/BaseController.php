@@ -8,6 +8,7 @@ class BaseController extends Controller
     {
         $this->checkLogin();
         $this->setCart();
+        $this->randProduct();
     }
 
     public function checkLogin()
@@ -34,6 +35,13 @@ class BaseController extends Controller
             $count = $cart->getCountProducts();
             $this->view->setVar('count', $count);
         }
+
+    }
+
+    public function randProduct()
+    {
+        $randProducts = Product::find(["stock > 0", 'order' => 'RAND()', 'limit' => 4]);
+        $this->view->setVar('randProducts', $randProducts);
 
     }
 

@@ -32,10 +32,9 @@
                 type: "POST",
                 data: data,
                 cache: false,
-                success: function (){
-                    var count = Number($('#cart-count').text());
-                    count += Number(data[0].value);
-                    $('#cart-count').text(count);
+                success: function (data){
+                    $('#cart-count').text(data.count);
+                    $('#shop-message').text(data.message);
                     $('#exampleModal').modal('show');
                 },
                 error: function () {

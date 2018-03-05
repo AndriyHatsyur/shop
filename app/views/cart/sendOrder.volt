@@ -60,6 +60,10 @@
         $( document ).ready(function() {
             $('#exampleModal').modal('show');
         });
+
+        $('.wrapper').click(function () {
+            window.location.href = '/shop';
+        });
     </script>
 {% endif %}
 
