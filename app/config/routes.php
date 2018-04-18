@@ -134,6 +134,14 @@ $router->add(
 );
 
 $router->add(
+    '/admin/order',
+    [
+        'controller' => 'admin_Order',
+        'action'     => 'index',
+    ]
+);
+
+$router->add(
     '/admin/message',
     [
         'controller' => 'admin_Message',

@@ -51,12 +51,5 @@ return
             ]
         ),
 
-        new Column(
-            'address',
-            [
-                'type'          => Column::TYPE_INTEGER,
-                'size'          => 10,
-                'notNull'       => true,
-            ]
-        ),
+
     ];
