@@ -1,6 +1,8 @@
 <?php
 
-class IndexController extends BaseController
+use Phalcon\Mvc\Controller;
+
+class IndexController extends Controller
 {
     
     public function installAction()

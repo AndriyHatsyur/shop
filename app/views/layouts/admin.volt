@@ -10,6 +10,9 @@
 				   	<a class="nav-link menu" href="/admin">Головна</a>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link menu" href="/admin/orders">Замовлення</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link menu" href="/admin/message">Повідомлення</a>
 				 </li>
 				 <li class="nav-item">

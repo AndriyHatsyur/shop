@@ -19,4 +19,30 @@ class AdminOrderController extends AdminBaseController
 
     }
 
+    public function orderAction()
+    {
+        $id = $this->dispatcher->getParam('id');
+
+        $order = Order::findFirstById($id);
+
+        $order->id_ = str_pad($order->id,5,0,STR_PAD_LEFT);
+
+        $this->view->setVar('title', "Замовлення № $order->id_");
+
+
+
+        if(!$order){
+            header("Location: /page-not-found");
+        }
+
+        $this->view->setVar('order', $order);
+
+        if ($this->request->isPost()) {
+
+            $order->status = $this->request->getPost('status');
+
+            $order->save();
+    }   }
+
+
 }

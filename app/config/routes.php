@@ -134,10 +134,18 @@ $router->add(
 );
 
 $router->add(
-    '/admin/order',
+    '/admin/orders',
     [
         'controller' => 'admin_Order',
         'action'     => 'index',
+    ]
+);
+
+$router->add(
+    '/admin/order/{id:[0-9]+}',
+    [
+        'controller' => 'admin_Order',
+        'action'     => 'order',
     ]
 );
 

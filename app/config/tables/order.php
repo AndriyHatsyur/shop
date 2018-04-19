@@ -46,7 +46,7 @@ return
             'status',
             [
                 'type'          => Column::TYPE_VARCHAR,
-                'size'          => 3,
+                'size'          => 10,
                 'notNull'       => true,
             ]
         ),
