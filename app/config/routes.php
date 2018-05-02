@@ -134,6 +134,22 @@ $router->add(
 );
 
 $router->add(
+    '/user',
+    [
+        'controller' => 'user',
+        'action'     => 'index',
+    ]
+);
+
+$router->add(
+    '/user/change-password',
+    [
+        'controller' => 'user',
+        'action'     => 'changePassword',
+    ]
+);
+
+$router->add(
     '/admin/orders',
     [
         'controller' => 'admin_Order',

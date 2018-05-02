@@ -8,7 +8,8 @@
         </div>    
         <div class="col-lg-2 col-md-3 header-contact">
             {% if user is defined %}
-                {{user.name}} | <a  class="link-header" href="/logout">Вийти</a>
+                <a  class="link-header" href="/user">{{user.name}}</a> |
+                <a  class="link-header" href="/logout">Вийти</a>
             {% else %}
                 <a  class="link-header" href="/login">Вхід </a>|
                 <a  class="link-header" href="/signup">Реєстрація</a>

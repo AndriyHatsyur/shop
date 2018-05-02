@@ -10,6 +10,7 @@ class UserController extends BaseController
 
     public function indexAction()
     {
+        $this->checkUserLogin();
         $title = "home";
         $this->view->setVar('title', $title);
     }
@@ -64,8 +65,52 @@ class UserController extends BaseController
 
     public function logoutAction()
     {
-        $this->session->destroy();
+        $this->session->remove('user');
         header("Location: /");
     }
 
+    public function changePasswordAction()
+    {
+        $this->view->setVar('title', "Змінити пароль");
+        if ($this->request->isPost()) {
+
+            $password = $this->request->getPost('password', "striptags");
+            $newPassword = $this->request->getPost('newpassword', "striptags");
+            $repeatPassword = $this->request->getPost('repeatpassword', "striptags");
+
+            $user = $this->session->get('user');
+
+            $userDb = User::findFirstByEmail($user->email);
+
+            if ($this->security->checkHash($password, $userDb->password)) {
+
+                if($newPassword == $repeatPassword) {
+                    $userDb->password = $this->security->hash($newPassword);
+                    if ($userDb->save())
+                        $this->view->setVar('message', "Пароль успішно змінено");
+
+                }else {
+                    $error = 'Паролі не співпадають';
+                    $this->view->setVar('error', $error);
+                }
+
+            } else {
+                $error = 'Не вірний пароль';
+                $this->view->setVar('error', $error);
+            }
+
+
+        }
+    }
+
+    public function checkUserLogin()
+    {
+
+        if (!$this->session->has('user')) {
+
+            header("Location: /login");
+            die('You are not logged in');
+
+        }
+    }
 }
