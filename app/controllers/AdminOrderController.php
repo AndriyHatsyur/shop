@@ -5,6 +5,7 @@
  * Date: 18.04.18
  * Time: 22:24
  */
+use Phalcon\Paginator\Adapter\Model as PaginatorModel;
 
 class AdminOrderController extends AdminBaseController
 {
@@ -13,9 +14,20 @@ class AdminOrderController extends AdminBaseController
 
         $title = "Замовлення";
         $this->view->setVar('title', $title);
+        $currentPage = (int) $_GET['page'];
+        $orders = Order::find(['order' => 'id DESC']);
+        $paginator = new PaginatorModel(
+            [
+                'data'  => $orders,
+                'limit' => 5,
+                'page'  => $currentPage,
+            ]
+        );
 
-        $orders = Order::find();
-        $this->view->setVar('orders', $orders);
+        $page = $paginator->getPaginate();
+
+        $this->view->setVar('page', $page);
+
 
     }
 

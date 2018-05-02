@@ -195,7 +195,7 @@ a.nav-link.menu:hover{
 	color: rgb(91, 165, 91);
 }
 
-.message-old {
+.message-send {
 	color: grey;
 }
 
@@ -203,3 +203,6 @@ a.nav-link.menu:hover{
 	width: 90%;
 }
 
+.message-cancel {
+	color: red;
+}

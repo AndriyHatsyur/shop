@@ -140,6 +140,13 @@ class CartController extends BaseController
 
                 $this->view->alert = 'Вибачте сталась помилка спробуйте пізніше';
             }
+            $order->id = str_pad((string)$order->id,5,0,STR_PAD_LEFT);
+
+
+            $mail = new Mail();
+            $mail->sendMailAdminOrder($order);
+            $mail = new Mail();
+            $mail->sendMailUserOrder($order);
 
 
         }

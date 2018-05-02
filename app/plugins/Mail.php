@@ -75,6 +75,64 @@ class Mail
         $this->mail->Send();
     }
 
+    public function sendMailAdminOrder($order)
+    {
+
+        $this->mail->AddAddress($this->emailAdmin);
+        $this->mail->Subject = 'Нове замовлення з myavon.pp.ua! Від ' . $order->address->name;
+        $this->mail->Body    = "<h3>Замовлення № "  . $order->id . "</h3>";
+
+        foreach ($order->orderProduct as $product)
+        {
+            $this->mail->Body .= $product->title . "    " . $product->count . " шт   " . $product->price . " грн <br><br>";
+        }
+
+        $this->mail->Body .=  "<b>Загальна кількість: $order->count шт</b><br>";
+        $this->mail->Body .=  "<b>Загальна сума: $order->sum  грн</b><br><br>";
+
+        $this->mail->Body .= "<h4>Адреса доставки</h4>";
+
+        $this->mail->Body .=   'Ім`я: ' . $order->address->name . '<br>'.
+                                'Прізвище: '. $order->address->surname . '<br>'.
+                                'Мобільний телефон: '. $order->address->mobile . '<br>'.
+                                'Адреса електронної пошти: '. $order->address->email . '<br>'.
+                                'Область: '. $order->address->region . '<br>'.
+                                'Адміністративний район: '. $order->address->area . '<br>'.
+                                'Населений пункт: '. $order->address->city . '<br>'.
+                                'Відділення Нової Пошти: '. $order->address->post . '<br>';
+
+        $this->mail->Send();
+    }
+
+    public function sendMailUserOrder($order)
+    {
+
+        $this->mail->AddAddress($order->address->email);
+        $this->mail->Subject = $order->address->name . ' ваше замовлення отримано';
+        $this->mail->Body    = "<h3>Замовлення № "  . $order->id . "</h3>";
+
+        foreach ($order->orderProduct as $product)
+        {
+            $this->mail->Body .= $product->title . "    " . $product->count . " шт   " . $product->price . " грн <br><br>";
+        }
+
+        $this->mail->Body .=  "<b>Загальна кількість: $order->count шт</b><br>";
+        $this->mail->Body .=  "<b>Загальна сума: $order->sum  грн</b><br><br>";
+
+        $this->mail->Body .= "<h4>Адреса доставки</h4>";
+
+        $this->mail->Body .=   'Ім`я: ' . $order->address->name . '<br>'.
+            'Прізвище: '. $order->address->surname . '<br>'.
+            'Мобільний телефон: '. $order->address->mobile . '<br>'.
+            'Адреса електронної пошти: '. $order->address->email . '<br>'.
+            'Область: '. $order->address->region . '<br>'.
+            'Адміністративний район: '. $order->address->area . '<br>'.
+            'Населений пункт: '. $order->address->city . '<br>'.
+            'Відділення Нової Пошти: '. $order->address->post . '<br>';
+
+        $this->mail->Send();
+    }
+
 
 
 }
