@@ -133,6 +133,16 @@ class Mail
         $this->mail->Send();
     }
 
+    public function sendResetPassword($user, $password)
+    {
+
+        $this->mail->AddAddress($user->email);
+        $this->mail->Subject = 'Відновлення паролю';
+        $this->mail->Body    = 'Ваш тимчавовий пароль ' . $password;
+        $this->mail->Send();
+
+    }
+
 
 
 }

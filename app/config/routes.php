@@ -150,6 +150,30 @@ $router->add(
 );
 
 $router->add(
+    '/user/reset-password',
+    [
+        'controller' => 'user',
+        'action'     => 'resetPassword',
+    ]
+);
+
+$router->add(
+    '/user/orders',
+    [
+        'controller' => 'user',
+        'action'     => 'orders',
+    ]
+);
+
+$router->add(
+    '/user/order/{id:[0-9]+}',
+    [
+        'controller' => 'user',
+        'action'     => 'order',
+    ]
+);
+
+$router->add(
     '/admin/orders',
     [
         'controller' => 'admin_Order',

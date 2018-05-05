@@ -71,6 +71,7 @@ class UserController extends BaseController
 
     public function changePasswordAction()
     {
+        $this->checkUserLogin();
         $this->view->setVar('title', "Змінити пароль");
         if ($this->request->isPost()) {
 
@@ -101,6 +102,79 @@ class UserController extends BaseController
 
 
         }
+    }
+
+    public function resetPasswordAction()
+    {
+        $this->view->setVar('title', "Скинути пароль");
+
+        if ($this->request->isPost()) {
+
+            $email = $this->request->getPost('email', "striptags");
+
+            $user = User::findFirstByEmail($email);
+
+            if($user) {
+
+                $password = substr(md5(uniqid(rand(), true)),0,7);
+
+                $password = strtoupper($password);
+
+                $user->password = $this->security->hash($password);
+                $user->save();
+
+                $mail = new Mail();
+                $mail->sendResetPassword($user, $password);
+
+                $this->view->setVar('message', "Тимчасовий пароль надіслона на ваш email");
+            } else {
+                $this->view->setVar('error', 'Такий користоувач відсутній');
+
+            }
+        }
+
+    }
+
+    public function ordersAction()
+    {
+        $this->checkUserLogin();
+
+        $this->view->setVar('title', "Ваші замовлення");
+
+        $user = $this->session->get('user');
+
+        $orders = Order::findByUser($user->id);
+
+        $this->view->setVar('orders', $orders);
+
+    }
+
+
+    public function orderAction()
+    {
+        $id = $this->dispatcher->getParam('id');
+
+        $user = $this->session->get('user');
+
+        $order = Order::findFirst(
+            [
+                'id = :id: AND user = :user:',
+                'bind' => [
+                    'id' => $id,
+                    'user' => $user->id,
+                ],
+            ]
+        );
+
+        $order->id_ = str_pad($order->id,5,0,STR_PAD_LEFT);
+
+        $this->view->setVar('title', "Замовлення № $order->id_");
+
+        if(!$order->id){
+            header("Location: /page-not-found");
+        }
+
+        $this->view->setVar('order', $order);
     }
 
     public function checkUserLogin()
