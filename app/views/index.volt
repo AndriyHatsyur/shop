@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/public/css/style.css">
     {{ assets.outputCss() }}
 
-    <title>{{ title }} - site </title>
+    <title>{{ title }} - AVON </title>
 
   </head>
   <body>

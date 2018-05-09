@@ -12,14 +12,14 @@ class PagesController extends BaseController
     }
     public function indexAction()
     {
-    	$title = "home";
+    	$title = "Ейвон-Україна";
         $this->view->setVar('title', $title);
 
     }
 
     public function contactAction()
     {
-        $title = "contact";
+        $title = "Контактна інформаці";
         $this->view->setVar('title', $title);
 
         if ($this->request->isPost()) {
@@ -83,8 +83,8 @@ class PagesController extends BaseController
 
     public function route404Action()
     {
-        $this->view->setVar('title', 'Page not found');
-    	echo "page not found";
+        $this->view->setVar('title', 'Сторінка не знайдена');
+    	echo "Сторінка не знайдена";
     }
 
    

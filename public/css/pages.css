@@ -23,10 +23,14 @@
     padding-top: 5px;
 }
 
-.banner,.logo {
-    max-width: 100%;
+.logo {
+    max-width: 90%;
     margin: 0 auto;
 }
+.banner {
+    max-width: 67%;
+}
+
 .cart-img {
     max-width: 30%;
 }
@@ -125,7 +129,7 @@ button:focus {
     text-decoration-color: #ff0099;  
 }
 
-.price-new {
+.price-new, .price-new:hover {
     color:#ff0099;
 }
 
@@ -241,6 +245,40 @@ button:focus {
 
 .message-error {
     color: rgba(238, 124, 124, 0.918);
+}
+
+.user-order {
+    border-top: 1px solid gainsboro;
+    border-left: 1px solid gainsboro;
+    border-right: 1px solid gainsboro;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.user-order:last-child {
+    border-bottom: 1px solid gainsboro;
+}
+
+.order-view {
+    width: 90%;
+}
+
+.order-row {
+    border: 1px solid gainsboro;
+    padding: 10px;
+}
+
+.order-cel {
+    padding: 10px;
+    border-right: 1px solid gainsboro;
+}
+
+.pink-link {
+    color: rgba(255, 0, 153, 0.71);
+}
+
+.pink-link:hover {
+    color:#ff0099;
 }
 
 @media screen and (max-width: 780px) {

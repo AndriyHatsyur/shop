@@ -35,6 +35,7 @@
     {% endif %}
 </div>
 
+
 <script type="text/javascript">
     function remove(id) {
         $.ajax({
@@ -43,7 +44,7 @@
             data: "id="+id,
             cache: false,
             success: function (html){
-               ;
+
                 $('.wrapper').html(html);
             },
             error: function () {
@@ -66,6 +67,7 @@
             success: function (html){
 
                 $('.wrapper').html(html);
+
 
             },
             error: function () {

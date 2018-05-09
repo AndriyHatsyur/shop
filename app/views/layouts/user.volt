@@ -5,7 +5,7 @@
 <main>
     <div class="container content">
         <div class="row">
-            <div class="col-lg-9 col-md-8 main">
+            <div class="col-lg-12 main">
                 <article>
                         {{content()}}
                 </article>

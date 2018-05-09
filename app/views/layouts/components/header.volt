@@ -4,7 +4,7 @@
             <a href="/"><img class="logo" src="/public/img/avon.png"></a>
         </div>
         <div class="col-lg-6 col-md-5">
-            <a href="/staty-predstavnykom"><img class="banner" src="/public/img/3.jpg"></a>
+            <a href="/staty-predstavnykom"><img class="banner" src="/public/img/3.png"></a>
         </div>    
         <div class="col-lg-2 col-md-3 header-contact">
             {% if user is defined %}

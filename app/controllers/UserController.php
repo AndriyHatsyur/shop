@@ -166,13 +166,18 @@ class UserController extends BaseController
             ]
         );
 
+        if(!$order){
+            return $this->dispatcher->forward(
+                [
+                    'controller' => 'pages',
+                    'action'     => 'route404',
+                ]
+            );
+        }
+
         $order->id_ = str_pad($order->id,5,0,STR_PAD_LEFT);
 
         $this->view->setVar('title', "Замовлення № $order->id_");
-
-        if(!$order->id){
-            header("Location: /page-not-found");
-        }
 
         $this->view->setVar('order', $order);
     }

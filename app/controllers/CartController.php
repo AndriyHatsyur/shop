@@ -23,6 +23,8 @@ class CartController extends BaseController
 
         $this->view->setVar('products', $products);
         $this->view->setVar('totalSum', $totalSum);
+        $count = $this->cart->getCountProducts();
+        $this->view->setVar('count', $count);
 
     }
 
