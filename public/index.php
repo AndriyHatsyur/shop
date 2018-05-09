@@ -8,6 +8,7 @@ use Phalcon\Mvc\View\Engine\Volt;
 use Phalcon\Config\Adapter\Ini as ConfigIni;
 use Phalcon\Flash\Direct as FlashDirect;
 use Phalcon\Flash\Session as FlashSession;
+use Phalcon\Session\Adapter\Files as Session;
 
 
 
@@ -27,6 +28,16 @@ $loader->register();
 
 $di = new FactoryDefault();
 
+$di->setShared(
+    'session',
+    function () {
+        $session = new Session();
+
+        $session->start();
+
+        return $session;
+    }
+);
 
 // Database connection is created based on the parameters defined in the configuration file
 $di->set('db', function() use ($config) {

@@ -1,0 +1,92 @@
+.cart-header, .cart-product{
+    width: 100%;
+}
+
+.cart-header {
+    border-bottom: 2px solid grey;
+    font-weight: bold;
+}
+
+.product-item{
+    padding-top: 15px;
+    border-bottom: 1px solid gainsboro;
+    font-size: 0.8em;
+}
+
+.product-item:last-child{
+    border-bottom: 2px solid grey;
+}
+
+.cart p , .cart img{
+    display: inline-block;
+}
+
+.p-name img {
+    width: 12%;
+}
+
+.p-name {
+    width: 50%;
+}
+
+.p-name a {
+    color: #212529;
+}
+
+.p-name a:hover {
+    color: black;
+}
+
+.p-price, .p-count{
+    width: 15%;
+}
+
+.p-sum, .p-del {
+    width: 10%;
+}
+
+.p-del {
+    width: 5%;
+}
+
+.icon-delete {
+    color: grey;
+    cursor: pointer;
+}
+
+.icon-delete:hover {
+    color: red;
+}
+
+.fa-plus,.fa-minus {
+    font-size: 1.4em;
+    font-weight: 100;
+    color: darkgray;
+    padding-right: 5px;
+    padding-left: 2px;
+    padding-top: 6px;
+    cursor: pointer;
+}
+
+.fa-plus:hover,.fa-minus:hover {
+    color: #ff0099;
+}
+
+
+.cart-empty {
+    font-size: 1.2em;
+}
+.cart-footer {
+    text-align: right;
+    padding-top: 10px;
+    font-size: 1.2em;
+}
+
+.cart-footer a:hover {
+    color: white;
+}
+
+.order {
+    width: 50%;
+    padding-top: 10px;
+}

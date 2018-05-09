@@ -21,7 +21,7 @@ return
 		        ]
 		    ),
 		    new Column(
-		        'text',
+		        'description',
 		        [
 		            'type'         => Column::TYPE_TEXT,
 		            'notNull'      => true,
@@ -31,7 +31,17 @@ return
                 'price',
                 [
                     'type'         => Column::TYPE_DECIMAL,
-                    'size'         => 16,
+                    'size'         => 6,
+                    'scale'        => 2,
+                    'notNull'      => true,
+                ]
+            ),
+		    new Column(
+                'sale',
+                [
+                    'type'         => Column::TYPE_DECIMAL,
+                    'size'         => 6,
+                    'scale'        => 2,
                     'notNull'      => true,
                 ]
             ),
@@ -43,4 +53,21 @@ return
 		            'notNull'      => true,
                 ]
             ),
+            new Column(
+                'image',
+                [
+                    'type'         => Column::TYPE_VARCHAR,
+		            'size'         => 200,
+		            'notNull'      => true,
+                ]
+			),
+			
+			new Column(
+		        'stock',
+		        [
+		            'type'          => Column::TYPE_INTEGER,
+		            'size'          => 3,
+		            'notNull'       => true,
+		        ]
+		    ),
 		];

@@ -8,7 +8,6 @@
 	line-height: 10vh;
 	text-align: center;
 	display: inline-block;
-	
 }
 
 .logout{
@@ -22,21 +21,27 @@
 }
 
 .logout:hover {
-	background-color: #ebebe0;
+	background-color: #eee;
+}
+
+.logout a {
+	text-decoration: none;
+	color: rgb(248, 104, 104);
 }
 
 .sidebar{
 	background-color: white;
 	border-right: 1px solid #d8d8c0;
-	height: 90vh;
+	min-height: 90vh;
 	padding-top: 10px;
 }
 
 .content{
 	background-color: white;
-	height: 90vh;
+	min-height: 90vh;
 	padding: 25px;
 	padding-top: 10px;
+	padding-bottom: 25px;
 }
 
 a.nav-link.menu{
@@ -51,27 +56,23 @@ a.nav-link.menu:hover{
 }
 
 .icon-edit{
-	position: absolute;
-	right: 60px;
 	color: grey;
 }
 
 .icon-delete{
-	position: absolute;
-	right: 20px;
-	top: 32%;
+	margin-left: 20px;
 	color: grey;
 }
 
 .icon-delete:hover {
-	
 	color: red;
 	cursor: pointer;
 }
 
 .icon-edit:hover{
-	
 	color: green;
+	cursor: pointer;
+	text-decoration: none;
 }
 
 .glyphicon-plus, .add-link{
@@ -82,23 +83,7 @@ a.nav-link.menu:hover{
 	color: green;
 }
 
-li.list-group-item:hover {
-	border-color: #eee;
-
-}
-
-.list-group-item:first-child {
-	border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-
-}
-
-.list-group-item:last-child {
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-}
-
-.btn-radius, .form-control {
+.btn-radius, .form-control, .modal-content {
     border-radius: 0;
 }
 
@@ -110,3 +95,114 @@ li.list-group-item:hover {
     margin-top: 10px;
 }
 
+.form-image {
+	max-width: 100px;
+}
+
+.admin-list {
+	width: 100%;
+}
+
+.admin-list tr {
+	border: 1px solid rgba(0,0,0,.125);
+	height: 50px;
+}
+
+.admin-list tbody tr:hover {
+	border-color: #eee;
+	background-color: #f5f5f0;
+}
+
+.admin-list tr td, .admin-list thead tr th {
+	padding: 10px;
+}
+
+.admin-list thead {
+	background-color: rgb(240, 243, 241);
+}
+
+.name-w {
+	max-width: 700px;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.admin-login {
+	margin: 0 auto;
+	border: 1px solid rgba(214, 212, 212, 0.801);
+	width: 40%;
+	padding: 30px;
+	margin-top: 1%;
+}
+.ligin-header{
+	margin: 0 auto;
+	width: 40%;
+	padding-top: 10%;
+	text-align: center;
+}
+.form-login{
+	width: 100%;
+}
+
+.btn-login {
+ border-radius: 0;
+ padding-left: 25px;
+ padding-right: 25px;
+}
+
+.error{
+	color: red;
+	font-weight: lighter;
+}
+
+.nav-tabs .nav-link{
+	border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.nav-item a{
+	color: grey;
+}
+
+.nav-tabs .nav-link.active{
+	background-color: rgb(240, 243, 241);
+	border-color: rgba(0,0,0,.125);
+}
+
+.nav-tabs {
+    border-bottom: 0;
+}
+
+.tab-content{
+	margin-bottom: 120px;
+}
+
+.paginator {
+	position: absolute;
+	text-align: center;
+	color:grey;
+	width: 95%;
+	bottom: 25px;
+
+}
+.paginator a {
+	color: grey;
+}
+
+.message-new {
+	color: rgb(91, 165, 91);
+}
+
+.message-send {
+	color: grey;
+}
+
+.order-view {
+	width: 90%;
+}
+
+.message-cancel {
+	color: red;
+}

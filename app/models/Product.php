@@ -8,11 +8,17 @@ class Product extends Model
 
     public $title;
 
-    public $text;
+    public $description;
 
     public $price;
 
+    public $sale;
+
     public $link;
+
+    public $image;
+
+    public $stock;
 
     public function initialize()
     {

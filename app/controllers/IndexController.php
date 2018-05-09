@@ -1,24 +1,10 @@
 <?php
 
-class IndexController extends BaseController
+use Phalcon\Mvc\Controller;
+
+class IndexController extends Controller
 {
-    public function indexAction()
-    {
-    	$title = "home";
-        $this->view->setVar('title', $title);
-    }
-
-    public function contactAction()
-    {
-        $title = "contact";
-        $this->view->setVar('title', $title);
-    }
-
-    public function route404Action()
-    {
-    	echo "page not found";
-    }
-
+    
     public function installAction()
     {
 
@@ -34,7 +20,7 @@ class IndexController extends BaseController
 
     	$admin ->password = $this->security->hash($password);
 
-        $admin ->save();
+		$admin ->save();
 		
     }
    

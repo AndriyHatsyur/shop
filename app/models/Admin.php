@@ -1,6 +1,8 @@
 <?php
 
 use Phalcon\Mvc\Model;
+use Phalcon\Validation;
+use Phalcon\Validation\Validator\Uniqueness;
 
 class Admin extends Model
 {
@@ -9,4 +11,5 @@ class Admin extends Model
     public $login;
 
     public $password;
+    
 }
