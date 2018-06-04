@@ -33,9 +33,10 @@ class ShopController extends BaseController
                 ]
             );
         } else {
-            $title = $product->title;
+            $title = $product->title . " | Замовити | Купити" ;
             $this->view->setVar('title', $title);
             $this->view->setVar('product', $product);
+            $this->view->setVar('description', $product->seo_description);
             $this->assets->addJs('js/count.js');
         }
 
@@ -70,6 +71,7 @@ class ShopController extends BaseController
             ]);
             $title = $category->name;
             $this->view->setVar('title', $title);
+            $this->view->setVar('category', $category);
             $this->paginate($productCategory);
         }
 

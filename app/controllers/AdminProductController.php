@@ -39,6 +39,7 @@ class AdminProductController extends AdminBaseController
             $product = new Product();
             $product->title = $this->request->getPost('name');
             $product->description = $this->request->getPost('description');
+            $product->seo_description = $this->request->getPost('description_seo');
             $product->price = $this->request->getPost('price');
             $product->sale = $this->request->getPost('sale');
             $product->stock = $this->request->getPost('stock');
@@ -87,6 +88,7 @@ class AdminProductController extends AdminBaseController
             $product = Product::findFirstById($id);
             $product->title = $this->request->getPost('name');
             $product->description = $this->request->getPost('description');
+            $product->seo_description = $this->request->getPost('description_seo');
             $product->price = $this->request->getPost('price');
             $product->sale = $this->request->getPost('sale');
             $product->stock = $this->request->getPost('stock');

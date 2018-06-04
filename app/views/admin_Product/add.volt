@@ -38,6 +38,10 @@
     <input type="file" name="files" class="form-control-file btn-radius" required>
     <small class="form-text text-muted">Виберіть зображення товару</small>
   </div>
+  <div class="form-group">
+    <label>Опис СЕО</label>
+    <textarea class="form-control btn-radius" name="description_seo" rows="12"></textarea>
+  </div>
   <input type='submit' class="btn btn-success btn-radius" value="Додати">
 </form>
 <script type="text/javascript">

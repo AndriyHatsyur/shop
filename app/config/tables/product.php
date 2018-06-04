@@ -27,6 +27,14 @@ return
 		            'notNull'      => true,
 		        ]
 		    ),
+
+            new Column(
+                'seo_description',
+                [
+                    'type'         => Column::TYPE_TEXT,
+                    'notNull'      => false,
+                ]
+            ),
 		    new Column(
                 'price',
                 [

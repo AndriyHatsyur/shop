@@ -152,6 +152,7 @@ class UserController extends BaseController
 
     public function orderAction()
     {
+        $this->checkUserLogin();
         $id = $this->dispatcher->getParam('id');
 
         $user = $this->session->get('user');

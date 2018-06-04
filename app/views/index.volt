@@ -13,7 +13,9 @@
 
     <link rel="stylesheet" href="/public/css/style.css">
     {{ assets.outputCss() }}
-
+      {% if description is defined %}
+        <meta name="description" content="{{ description }}">
+      {% endif %}
     <title>{{ title }} - AVON </title>
 
   </head>

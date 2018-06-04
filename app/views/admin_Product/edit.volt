@@ -46,6 +46,10 @@
     <input type="file" name="files" class="form-control-file btn-radius">
     <small class="form-text text-muted">Виберіть зображення товару для того щоб його замінити</small>
   </div>
+  <div class="form-group">
+    <label>Опис СЕО</label>
+    <textarea class="form-control btn-radius" name="description_seo" rows="7">{{product.seo_description}}</textarea>
+  </div>
   <input type='submit' class="btn btn-success btn-radius" value="Редагувати">
 </form>
 <script type="text/javascript">

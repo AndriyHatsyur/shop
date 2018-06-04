@@ -12,7 +12,7 @@
         <label>*Пароль</label>
         <input type="password" name="password" class="form-control btn-radius" required>
     </div>
-    <a href="/user/reset-password">Забули пароль</a>
+    <a href="/user/reset-password" class="pink-link">Забули пароль</a>
     <br>
 
     <input type='submit' class="btn btn-pink btn-radius" value="Вхід">

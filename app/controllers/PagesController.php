@@ -1,7 +1,6 @@
 <?php
 
 
-
 class PagesController extends BaseController
 {
     public function initialize(){
@@ -10,10 +9,13 @@ class PagesController extends BaseController
         $this->assets->addCss('css/pages.css');
 
     }
+
     public function indexAction()
     {
     	$title = "Ейвон-Україна";
         $this->view->setVar('title', $title);
+
+        $this->view->setVar('description', 'fddfdfdf');
 
     }
 
@@ -51,7 +53,7 @@ class PagesController extends BaseController
 
     public function statyPredstavnykomAction()
     {
-        $this->view->title = "Стати прндставником";
+        $this->view->title = "Стати прндставником Ейвон";
 
         if ($this->request->isPost()) {
 
@@ -79,6 +81,11 @@ class PagesController extends BaseController
             
             $this->view->setVar('alert', $alert);
         }
+    }
+
+    public function paymentsaction()
+    {
+        $this->view->title = "Оплата та доставка";
     }
 
     public function route404Action()

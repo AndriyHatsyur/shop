@@ -29,6 +29,14 @@ $router->add(
 );
 
 $router->add(
+    '/payments-and-deliveries',
+    [
+        'controller' => 'pages',
+        'action'     => 'payments',
+    ]
+);
+
+$router->add(
     '/signup',
     [
         'controller' => 'user',

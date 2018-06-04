@@ -1,5 +1,5 @@
 {% include 'partials/alert-shop.volt' %}
-<h2 class="shop-header">Розпродаж косметики AVON</h2>
+<h2 class="shop-header">{{ category.name }} AVON</h2>
 <div class="row">
     {% for product in page.items %}
         {% if product.product.stock > 0 %}

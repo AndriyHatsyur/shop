@@ -10,6 +10,8 @@ class Product extends Model
 
     public $description;
 
+    public $seo_description;
+
     public $price;
 
     public $sale;

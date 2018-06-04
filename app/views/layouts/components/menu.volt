@@ -8,6 +8,7 @@
             <a class="nav-item nav-link" href="/shop">розпродаж</a>
             <a class="nav-item nav-link" href="/staty-predstavnykom#header">стати предстаником</a>
             <a class="nav-item nav-link" target="_blanck" href="http://www.avon.ua/PRSuite/custonlineOrderEBrochure.page?custRepOrdr=1&acNo=MTM0MzM1NzE%3D&source=V0lER1Q=&c=vbrochure&s=brochurewidget_vbrochure">Каталог</a>
+            <a class="nav-item nav-link" href="/payments-and-deliveries">Оплата та доставка</a>
             <a class="nav-item nav-link" href="/contact">Контакти</a>
         </div>
     </div>
